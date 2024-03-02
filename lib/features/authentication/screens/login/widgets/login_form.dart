@@ -1,4 +1,4 @@
-
+import 'package:clothes/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:clothes/features/authentication/screens/signup/signup.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/constants/text_strings.dart';
@@ -15,8 +15,7 @@ class TLoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: TSizes.spaceBtwSections),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
             TextFormField(
@@ -46,7 +45,7 @@ class TLoginForm extends StatelessWidget {
                 ),
                 // Forget Password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
                 )
               ],
@@ -57,8 +56,7 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(TTexts.signIn))),
+                    onPressed: () {}, child: const Text(TTexts.signIn))),
             const SizedBox(height: TSizes.spaceBtwItems),
 
             SizedBox(
