@@ -1,4 +1,3 @@
-
 import 'package:clothes/common/widgets/image_text/vertical_image_text.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:flutter/material.dart';
