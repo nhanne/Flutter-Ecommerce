@@ -1,7 +1,9 @@
+import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/appbar/tabbar.dart';
 import 'package:clothes/common/widgets/brands/brand_cart.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
+import 'package:clothes/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:clothes/util/constants/colors.dart';
@@ -17,10 +19,10 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        // appBar: TAppBar(
-        //   title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        //   actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)],
-        // ),
+        appBar: TAppBar(
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)],
+        ),
         body: NestedScrollView(
             headerSliverBuilder: (_, innerBoxIsScrolled) {
               return [
