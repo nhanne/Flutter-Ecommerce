@@ -36,7 +36,6 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
               brandTextSize: brandTextSize
             ),
         ),
-        Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium),
         const SizedBox(width: TSizes.xs),
         Icon(Iconsax.verify5, color: iconColor, size: TSizes.iconXs),
       ],
