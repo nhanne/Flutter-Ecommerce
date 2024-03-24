@@ -8,7 +8,8 @@ class TBrandTitleText extends StatelessWidget {
       required this.title,
       this.maxLines = 1,
       this.textAlign = TextAlign.center,
-      this.brandTextSize = TextSizes.small});
+      this.brandTextSize = TextSizes.small
+      });
 
   final Color? color;
   final String title;

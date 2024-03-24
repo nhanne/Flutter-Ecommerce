@@ -3,9 +3,11 @@ import 'package:clothes/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:clothes/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:clothes/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
+import 'package:clothes/features/personalization/screens/profile/profile.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -23,7 +25,7 @@ class SettingsScreen extends StatelessWidget {
                   TAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white))),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
-                  const TUserProfileTitle(),
+                  TUserProfileTitle(onPressed: () => Get.to(() => const ProfileScreen())),
                   const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
