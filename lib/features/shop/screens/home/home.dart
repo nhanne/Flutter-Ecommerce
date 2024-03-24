@@ -1,15 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:clothes/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:clothes/common/widgets/images/t_rounded_image.dart';
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/common/widgets/texts/section_heading.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
@@ -42,16 +38,14 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        TSectionHeading(
-                          title: 'Popular Categories',
-                          showActionButton: false,
-                          textColor: TColors.white,
-                        ),
+                        TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: TColors.white),
                         SizedBox(height: TSizes.spaceBtwItems),
                         THomeCategories()
                       ],
                     ),
                   ),
+                  SizedBox(height: TSizes.spaceBtwSections),
+
                 ],
               ),
             ),
@@ -67,7 +61,13 @@ class HomeScreen extends StatelessWidget {
                     TImages.promoBanner3
                   ]),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
+                  TSectionHeading(title: 'Popular Products', onPressed: (){}),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+
+                  TGridLayout(
+                      itemCount: 14,
+                      itemBuilder: (_, index) => const TProductCardVertical()
+                  ),
                 ],
               ),
             ),
@@ -77,5 +77,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,4 +1,3 @@
-import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
