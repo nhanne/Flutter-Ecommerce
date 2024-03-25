@@ -1,7 +1,9 @@
 import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/shop/screens/product_details/widgets/product_meta_data.dart';
+import 'package:clothes/features/shop/screens/product_reviews/product_review.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'widgets/bottom_add_to_cart_widget.dart';
@@ -70,8 +72,8 @@ class ProductDetailScreen extends StatelessWidget {
                       const TSectionHeading(
                           title: 'Review (199)', showActionButton: false),
                       IconButton(
-                          icon: const Icon(Iconsax.arrow_right_3, size: 18),
-                          onPressed: () {}),
+                          icon: const Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to(() => const ProductReviewsScreen())),
+                          
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
