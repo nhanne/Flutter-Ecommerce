@@ -3,6 +3,8 @@ import 'package:clothes/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:clothes/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:clothes/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
+import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
+import 'package:clothes/features/personalization/screens/address/widgets/address.dart';
 import 'package:clothes/features/personalization/screens/profile/profile.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -38,7 +40,12 @@ class SettingsScreen extends StatelessWidget {
                     const TSectionHeading(title: 'Account Settings', showActionButton: false),
                     const SizedBox(height: TSizes.spaceBtwItems),
                     
-                    TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Address', subTitle: 'Set shopping delivery address', onTap: (){}),
+                    TSettingsMenuTile(
+                      icon: Iconsax.safe_home, 
+                      title: 'My Address', 
+                      subTitle: 'Set shopping delivery address', 
+                      onTap: () => Get.to(() => const UserAddressScreen()),
+                    ),
                     TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, Remove products and move to checkout', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){}),
