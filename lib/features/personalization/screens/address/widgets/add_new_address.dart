@@ -24,17 +24,17 @@ class AddNewAddressScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwInputFields),
                 Row(
                   children: [
-                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building_31),labelText: 'Phone Number'))),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building_31),labelText: 'Street'))),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
-                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code),labelText: 'Phone Number'))),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code),labelText: 'Postal Code'))),
                   ],
                 ),
                  const SizedBox(height: TSizes.spaceBtwInputFields),
                   Row(
                   children: [
-                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building),labelText: 'Phone Number'))),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building),labelText: 'City'))),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
-                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.activity),labelText: 'Phone Number'))),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.activity),labelText: 'State'))),
                   ],
                 ),
                   const SizedBox(height: TSizes.spaceBtwInputFields),
