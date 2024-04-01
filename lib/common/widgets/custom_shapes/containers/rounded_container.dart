@@ -13,7 +13,7 @@ class TRoundedContainer extends StatelessWidget {
       this.borderColor = TColors.borderPrimary,
       this.backgroundColor = TColors.white,
       this.padding,
-      this.margin, required imageUrl});
+      this.margin});
 
   final double? width;
   final double? height;

@@ -6,7 +6,6 @@ import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/address.dart';
 import 'package:clothes/features/personalization/screens/profile/profile.dart';
-import 'package:clothes/features/shop/screens/order/order.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -47,16 +46,8 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'Set shopping delivery address', 
                       onTap: () => Get.to(() => const UserAddressScreen()),
                     ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.shopping_cart, 
-                      title: 'My Cart', 
-                      subTitle: 'Add, Remove products and move to checkout', 
-                      onTap: (){}),
-                    TSettingsMenuTile(
-                      icon: Iconsax.bag_tick, 
-                      title: 'My Order', 
-                      subTitle: 'In-progress and Completed Orders',  
-                      onTap: () => Get.to(() => const OrderScreen()),),
+                    TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, Remove products and move to checkout', onTap: (){}),
+                    TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: (){}),
