@@ -1,10 +1,7 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/appbar/tabbar.dart';
-import 'package:clothes/common/widgets/brands/brand_cart.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -21,7 +18,7 @@ class StoreScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-          actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)],
+          actions: [TCartCounterIcon(onPressed: () {}, iconColor: TColors.black)],
         ),
         body: NestedScrollView(
             headerSliverBuilder: (_, innerBoxIsScrolled) {
@@ -33,29 +30,30 @@ class StoreScreen extends StatelessWidget {
                   backgroundColor: THelperFunctions.isDarkMode(context)
                       ? TColors.black
                       : TColors.white,
-                  expandedHeight: 440,
+                  // expandedHeight: 440,
+                  expandedHeight: 130,
                   flexibleSpace: Padding(
-                    padding: const EdgeInsets.all(TSizes.defaultSpace),
+                    padding: const EdgeInsets.only(left: TSizes.defaultSpace, right: TSizes.defaultSpace),
                     child: ListView(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      children: [
-                        const SizedBox(height: TSizes.spaceBtwItems),
-                        const TSearchContainer(
+                      children: const [
+                        SizedBox(height: TSizes.spaceBtwItems),
+                        TSearchContainer(
                             text: 'Search in Store',
                             showBorder: true,
                             showBackground: false,
                             padding: EdgeInsets.zero),
-                        const SizedBox(height: TSizes.spaceBtwSections),
-                        const TSectionHeading(
-                            title: 'Featured Brands', showActionButton: true),
-                        const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-                        TGridLayout(
-                            itemCount: 4,
-                            mainAxisExtent: 80,
-                            itemBuilder: (_, index) {
-                              return const TBrandCard(showBorder: false);
-                            })
+                        // const SizedBox(height: TSizes.spaceBtwSections),
+                        // const TSectionHeading(
+                        //     title: 'Featured Brands', showActionButton: true),
+                        // const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+                        // TGridLayout(
+                        //     itemCount: 4,
+                        //     mainAxisExtent: 80,
+                        //     itemBuilder: (_, index) {
+                        //       return const TBrandCard(showBorder: false);
+                        //     })
                       ],
                     ),
                   ),
@@ -63,11 +61,11 @@ class StoreScreen extends StatelessWidget {
                   /// Tabs
                   bottom: const TTabBar(
                     tabs: [
-                      Tab(child: Text('Sports')),
-                      Tab(child: Text('Furniture')),
-                      Tab(child: Text('Electronics')),
-                      Tab(child: Text('Clothes')),
-                      Tab(child: Text('Cosmetics')),
+                      Tab(child: Text('Balenciaga')),
+                      Tab(child: Text('Nike')),
+                      Tab(child: Text('Louis Vuitton')),
+                      Tab(child: Text('Adidas')),
+                      Tab(child: Text('Fear of God')),
                     ],
                   ),
                 ),

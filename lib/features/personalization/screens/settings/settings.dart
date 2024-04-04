@@ -3,6 +3,7 @@ import 'package:clothes/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:clothes/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:clothes/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
+import 'package:clothes/features/authentication/screens/login/login.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/address.dart';
 import 'package:clothes/features/personalization/screens/profile/profile.dart';
@@ -46,40 +47,40 @@ class SettingsScreen extends StatelessWidget {
                       subTitle: 'Set shopping delivery address', 
                       onTap: () => Get.to(() => const UserAddressScreen()),
                     ),
-                    TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, Remove products and move to checkout', onTap: (){}),
+                    // TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, Remove products and move to checkout', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Order', subTitle: 'In-progress and Completed Orders', onTap: (){}),
-                    TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){}),
+                    // TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account', onTap: (){}),
                     TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){}),
-                    TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: (){}),
-                    TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts', onTap: (){}),
-
-                    const SizedBox(height: TSizes.spaceBtwSections),
-                    const TSectionHeading(title: 'App Setting', showActionButton: false),
-                    const SizedBox(height: TSizes.spaceBtwItems),
-                    const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
-                    TSettingsMenuTile(
-                      icon: Iconsax.location,
-                      title: 'Geolocation',
-                      subTitle: 'Set recommendation based on location',
-                      trailing: Switch(value: true, onChanged: (value){}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.security_user,
-                      title: 'Safe Mode',
-                      subTitle: 'Search result is safe for all ages',
-                      trailing: Switch(value: false, onChanged: (value){}),
-                    ),
-                    TSettingsMenuTile(
-                      icon: Iconsax.location,
-                      title: 'HD Image Quality',
-                      subTitle: 'Set image quality to be seen',
-                      trailing: Switch(value: false, onChanged: (value){}),
-                    ),
-
-                    const SizedBox(height: TSizes.spaceBtwSections),
+                    // TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: (){}),
+                    // TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts', onTap: (){}),
+                    //
+                    // const SizedBox(height: TSizes.spaceBtwSections),
+                    // const TSectionHeading(title: 'App Setting', showActionButton: false),
+                    // const SizedBox(height: TSizes.spaceBtwItems),
+                    // const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.location,
+                    //   title: 'Geolocation',
+                    //   subTitle: 'Set recommendation based on location',
+                    //   trailing: Switch(value: true, onChanged: (value){}),
+                    // ),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.security_user,
+                    //   title: 'Safe Mode',
+                    //   subTitle: 'Search result is safe for all ages',
+                    //   trailing: Switch(value: false, onChanged: (value){}),
+                    // ),
+                    // TSettingsMenuTile(
+                    //   icon: Iconsax.location,
+                    //   title: 'HD Image Quality',
+                    //   subTitle: 'Set image quality to be seen',
+                    //   trailing: Switch(value: false, onChanged: (value){}),
+                    // ),
+                    //
+                    // const SizedBox(height: TSizes.spaceBtwSections),
                     SizedBox(
                       width: double.infinity,
-                      child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+                      child: OutlinedButton(onPressed: () => Get.to(() => const LoginScreen()), child: const Text('Logout')),
                     ),
                     const SizedBox(height: TSizes.spaceBtwSections * 2.5)
                   ],

@@ -55,7 +55,7 @@ class TSingleAddress extends StatelessWidget{
               const SizedBox(height: TSizes.sm / 2),
               const Text('0822654123', maxLines: 1,overflow: TextOverflow.ellipsis),
               const SizedBox(height: TSizes.sm /2),
-              const Text('116, TO HIEN TAHNH, P15, Q10, VN')
+              const Text('116, TO HIEN THANH, P15, Q10, VN')
             ],
           )
         ],

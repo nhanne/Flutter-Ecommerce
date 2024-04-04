@@ -1,4 +1,3 @@
-
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/images/t_circular_image.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
@@ -34,14 +33,14 @@ class ProfileScreen extends StatelessWidget {
               ),
               /// Details
               const SizedBox(height: TSizes.spaceBtwItems / 2),
-              const Divider(),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              const TSectionHeading(title: 'Profile Information', showActionButton: false),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              TProfileMenu(title: 'Name', value: 'Tran Thanh Nhan', onPressed: () {}),
-              TProfileMenu(title: 'Username', value: 'nhantran.netdev', onPressed: () {}),
+              // const Divider(),
+              // const SizedBox(height: TSizes.spaceBtwItems),
+              //
+              // const TSectionHeading(title: 'Profile Information', showActionButton: false),
+              // const SizedBox(height: TSizes.spaceBtwItems),
+              //
+              // TProfileMenu(title: 'Name', value: 'Trần Thanh Nhân', onPressed: () {}),
+              // TProfileMenu(title: 'Username', value: 'nhantran', onPressed: () {}),
 
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               const Divider(),
@@ -51,11 +50,11 @@ class ProfileScreen extends StatelessWidget {
               const TSectionHeading(title: 'Personal Information', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwItems),
 
-              TProfileMenu(title: 'User ID', value: 'Tran Thanh Nhan', icon: Iconsax.copy, onPressed: () {}),
-              TProfileMenu(title: 'Email', value: 'nhantran.netdev@gmail.com', onPressed: () {}),
+              TProfileMenu(title: 'User ID', value: 'Trần Thanh Nhân', icon: Iconsax.copy, onPressed: () {}),
+              TProfileMenu(title: 'Email', value: 'nhantran@gmail.com', onPressed: () {}),
               TProfileMenu(title: 'Phone Number', value: '+84 858 032 268', onPressed: () {}),
-              TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
-              TProfileMenu(title: 'Date of Birth', value: '9 Dec 2002', onPressed: () {}),
+              // TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
+              // TProfileMenu(title: 'Date of Birth', value: '9 Dec 2002', onPressed: () {}),
 
               Center(
                 child: TextButton(

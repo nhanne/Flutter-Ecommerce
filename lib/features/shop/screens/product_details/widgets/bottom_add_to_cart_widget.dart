@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:clothes/common/widgets/icons/t_circular_icon.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';

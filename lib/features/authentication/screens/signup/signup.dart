@@ -25,13 +25,14 @@ class SignupScreen extends StatelessWidget {
               /// Title
               Text(TTexts.signupTitle,
                   style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: TSizes.defaultSpace),
 
               /// Form
               const TSignupForm(),
               /// Divider
+              const SizedBox(height: TSizes.defaultSpace),
               TFormDivider(dividerText: TTexts.orSignUpWith.capitalize!),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: TSizes.defaultSpace),
 
               /// Social Buttons
               const TSocialButtons(),

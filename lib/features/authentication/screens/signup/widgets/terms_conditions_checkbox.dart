@@ -2,6 +2,7 @@ import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TTermsAndConditionCheckbox extends StatelessWidget {
@@ -16,22 +17,24 @@ class TTermsAndConditionCheckbox extends StatelessWidget {
       children: [
         SizedBox(width: 24, height: 24,child: Checkbox(value:true, onChanged: (value){})),
         const SizedBox(width: TSizes.spaceBtwItems),
-        Text.rich(
-          TextSpan(
-              children: [
-                TextSpan(text: '${TTexts.iAgreeTo} ', style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(text: '${TTexts.privacyPolicy} ', style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? TColors.white : TColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? TColors.white : TColors.primary,
-                )),
-                TextSpan(text: '${TTexts.and} ', style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(text: TTexts.termsOfUse, style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? TColors.white : TColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? TColors.white : TColors.primary,
-                )),
-              ]
+        Expanded(
+          child: Text.rich(
+            TextSpan(
+                children: [
+                  TextSpan(text: '${TTexts.iAgreeTo} ', style: Theme.of(context).textTheme.bodySmall),
+                  TextSpan(text: '${TTexts.privacyPolicy} ', style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? TColors.white : TColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? TColors.white : TColors.primary,
+                  )),
+                  TextSpan(text: '${TTexts.and} ', style: Theme.of(context).textTheme.bodySmall),
+                  TextSpan(text: TTexts.termsOfUse, style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? TColors.white : TColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? TColors.white : TColors.primary,
+                  )),
+                ]
+            ),
           ),
         ),
       ],
