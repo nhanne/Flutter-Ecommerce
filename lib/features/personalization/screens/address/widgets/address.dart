@@ -18,6 +18,7 @@ class UserAddressScreen extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: TColors.primary,
         onPressed: () => Get.to(() => const AddNewAddressScreen()),
         child: const Icon(Iconsax.add, color: TColors.white),       
       ),
@@ -32,8 +33,6 @@ class UserAddressScreen extends StatelessWidget{
             children: [
               TSingleAddress(selectedAddress: false),
               TSingleAddress(selectedAddress: true),
-
-            
             ],
 
           )

@@ -10,6 +10,7 @@ import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -40,7 +41,7 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// Thumbnail Image
-                  const TRoundedImage(imageUrl: TImages.productImage1, applyImageRadius: true),
+                  const TRoundedImage(imageUrl: TImages.productImage78, applyImageRadius: true),
       
                   /// Sale Tag
                   Positioned(
@@ -49,7 +50,7 @@ class TProductCardVertical extends StatelessWidget {
                         radius: TSizes.sm,
                         backgroundColor: TColors.primary.withOpacity(0.8),
                         padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
-                        child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
+                        child: Text('10%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
                       ),
                   ),
                   /// Favourite Icon Button
@@ -71,9 +72,9 @@ class TProductCardVertical extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TProductTitleText(title: 'Green Nike Air Shoes', smallSize: true,),
+                    TProductTitleText(title: 'Winter Jacket', smallSize: true,),
                     SizedBox(height: TSizes.spaceBtwItems / 2),
-                    TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                    TBrandTitleWithVerifiedIcon(title: 'Balenciaga'),
                   ],
                 ),
               ),
@@ -83,9 +84,11 @@ class TProductCardVertical extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: TSizes.sm),
-                  child: TProductPriceText(price: '35.0'),
+                const Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: TSizes.sm),
+                    child: TProductPriceText(price: '13.500.000', maxLines: 2,),
+                  ),
                 ),
                 Container(
                   decoration: const BoxDecoration(
@@ -96,8 +99,8 @@ class TProductCardVertical extends StatelessWidget {
                     ),
                   ),
                   child: const SizedBox(
-                    width: TSizes.iconLg * 1.2,
-                    height: TSizes.iconLg * 1.2,
+                    width: TSizes.iconMd * 1.2,
+                    height: TSizes.iconMd * 1.2,
                     child: Center(child: Icon(Iconsax.add, color: TColors.white)),
                   ),
                 )

@@ -17,66 +17,66 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TProductImageSlider(),
+            const TProductImageSlider(),
 
             /// Product Details
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                   right: TSizes.defaultSpace,
                   left: TSizes.defaultSpace,
                   bottom: TSizes.defaultSpace),
               child: Column(
                 children: [
                   /// Rating & Share Button
-                  TRatingAndShare(),
+                  const TRatingAndShare(),
 
                   /// Price, Title, Stock & Brand
-                  TProductMetaData(),
+                  const TProductMetaData(),
 
                   /// Attributes
-                  TProductAttributes(),
+                  const TProductAttributes(),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Checkout Button
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text('Checkout'))),
+                          onPressed: () {}, child: const Text('Checkout'))),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Description
-                  const TSectionHeading(title: 'Description'),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  const ReadMoreText(
-                    'This is aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                    trimLines: 2,
-                    trimMode: TrimMode.Line,
-                    trimCollapsedText: 'Show more',
-                    trimExpandedText: 'Less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                  ),
+                  // const TSectionHeading(title: 'Description'),
+                  // const SizedBox(height: TSizes.spaceBtwItems),
+                  // const ReadMoreText(
+                  //   'This is aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                  //   trimLines: 2,
+                  //   trimMode: TrimMode.Line,
+                  //   trimCollapsedText: 'Show more',
+                  //   trimExpandedText: 'Less',
+                  //   moreStyle:
+                  //       TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  //   lessStyle:
+                  //       TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  // ),
 
                   /// Reviews
                   const Divider(),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const TSectionHeading(
-                          title: 'Review (199)', showActionButton: false),
-                      IconButton(
-                          icon: const Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to(() => const ProductReviewsScreen())),
-                          
-                    ],
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwSections),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     const TSectionHeading(
+                  //         title: 'Review (199)', showActionButton: false),
+                  //     IconButton(
+                  //         icon: const Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to(() => const ProductReviewsScreen())),
+                  //
+                  //   ],
+                  // ),
+                  // const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             )

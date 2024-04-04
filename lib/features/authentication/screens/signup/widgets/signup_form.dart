@@ -38,11 +38,11 @@ class TSignupForm extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user_edit)),
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
+          // TextFormField(
+          //   expands: false,
+          //   decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user_edit)),
+          // ),
+          // const SizedBox(height: TSizes.spaceBtwInputFields),
           TextFormField(
             expands: false,
             decoration: const InputDecoration(labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),

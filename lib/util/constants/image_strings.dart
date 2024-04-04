@@ -126,6 +126,7 @@ class TImages {
   static const String productImage75 = "assets/images/products/slipper-product-2.png";
   static const String productImage76 = "assets/images/products/slipper-product-3.png";
   static const String productImage77= "assets/images/products/slipper-product.png";
+  static const String productImage78= "assets/images/products/balenciaga_jacket.jpg";
 
 
 
