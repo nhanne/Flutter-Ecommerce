@@ -17,13 +17,13 @@ import 'package:iconsax/iconsax.dart';
           child: Column(
             children: [
               /// Dropdown
-              DropdownButtonFormField(
-                decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
-                onChanged: (value) {} ,
-                items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity']
-                .map((option) => DropdownMenuItem(child: Text(option)))
-                .toList(),           
-                ),
+              // DropdownButtonFormField(
+              //   decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
+              //   onChanged: (value) {} ,
+              //   items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity']
+              //   .map((option) => DropdownMenuItem(child: Text(option)))
+              //   .toList(),
+              //   ),
                 const SizedBox(height: TSizes.spaceBtwSections),
                 ///Products
                 TGridLayout(itemCount: 8, itemBuilder: (_, index) => const TProductCardVertical())
