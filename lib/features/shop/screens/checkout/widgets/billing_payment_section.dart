@@ -12,24 +12,27 @@ class TBillingPaymentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return Column(
-      children: [
-        TSectionHeading(title: 'Payment Method', buttonTitle: 'Change', onPressed: (){}),
-        const SizedBox(height: TSizes.spaceBtwItems / 2),
-        Row(
-          children: [
-            TRoundedContainer(
-              width: 60,
-              height: 35,
-              backgroundColor: dark ? TColors.light : TColors.white,
-              padding: const EdgeInsets.all(TSizes.sm),
-              child: const Image(image: AssetImage(TImages.paypal), fit: BoxFit.contain),
-            ),
-            const SizedBox(width: TSizes.spaceBtwItems / 2),
-            Text('Paypal', style: Theme.of(context).textTheme.bodyLarge),
-          ],
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      child: Column(
+        children: [
+          TSectionHeading(title: 'Payment Method', buttonTitle: 'Change', onPressed: (){}),
+          const SizedBox(height: TSizes.spaceBtwItems / 2),
+          Row(
+            children: [
+              TRoundedContainer(
+                width: 60,
+                height: 35,
+                backgroundColor: dark ? TColors.light : TColors.white,
+                padding: const EdgeInsets.all(TSizes.sm),
+                child: const Image(image: AssetImage(TImages.applePay), fit: BoxFit.contain),
+              ),
+              const SizedBox(width: TSizes.spaceBtwItems / 2),
+              Text('Apple Pay', style: Theme.of(context).textTheme.bodyLarge),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,6 @@
+import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
+import 'package:clothes/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:clothes/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:clothes/features/shop/screens/product_reviews/product_review.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -17,6 +19,8 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: TAppBar(showBackArrow: true, title: Text('Product Detail',
+          style: Theme.of(context).textTheme.headlineSmall)),
       bottomNavigationBar: const TBottomAddToCart(),
       body: SingleChildScrollView(
         child: Column(

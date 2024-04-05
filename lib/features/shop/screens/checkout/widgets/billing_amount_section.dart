@@ -6,43 +6,46 @@ class TBillingAmountSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Subtotal', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$256.0', style: Theme.of(context).textTheme.labelLarge),
-          ],
-        ),
-        const SizedBox(height: TSizes.spaceBtwItems / 2),
+    return Padding(
+      padding: const EdgeInsets.all(TSizes.defaultSpace),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Subtotal', style: Theme.of(context).textTheme.bodyMedium),
+              Text('9.000.000 VNĐ', style: Theme.of(context).textTheme.labelLarge),
+            ],
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge),
-          ],
-        ),
-        const SizedBox(height: TSizes.spaceBtwItems / 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium),
+              Text('50.000 VNĐ', style: Theme.of(context).textTheme.labelLarge),
+            ],
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Tax Fee', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.labelLarge),
-          ],
-        ),
-        const SizedBox(height: TSizes.spaceBtwItems / 2),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Tax Fee', style: Theme.of(context).textTheme.bodyMedium),
+              Text('0 VNĐ', style: Theme.of(context).textTheme.labelLarge),
+            ],
+          ),
+          const SizedBox(height: TSizes.spaceBtwItems / 2),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Order Total', style: Theme.of(context).textTheme.bodyMedium),
-            Text('\$6.0', style: Theme.of(context).textTheme.titleMedium),
-          ],
-        )
-      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Order Total', style: Theme.of(context).textTheme.bodyMedium),
+              Text('9.050.000 VNĐ', style: Theme.of(context).textTheme.titleMedium),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

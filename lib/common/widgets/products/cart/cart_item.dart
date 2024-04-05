@@ -18,7 +18,7 @@ class TCartItem extends StatelessWidget {
       children: [
         /// Image
         TRoundedImage(
-            imageUrl: TImages.productImage1,
+            imageUrl: TImages.productImage7,
             width: 60,
             height: 60,
             padding: const EdgeInsets.all(TSizes.sm),
@@ -32,14 +32,14 @@ class TCartItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const TBrandTitleWithVerifiedIcon(title: 'Nike'),
-              const Flexible(child: TProductTitleText(title: 'Black Sports shoes', maxLines: 1)),
+              const Flexible(child: TProductTitleText(title: 'Jordan 1 Shoes', maxLines: 1)),
               /// Attributes
               Text.rich(
                   TextSpan(
                       children: [
                         TextSpan(text: 'Color', style: Theme.of(context).textTheme.bodySmall),
-                        TextSpan(text: 'Green', style: Theme.of(context).textTheme.bodyLarge),
-                        TextSpan(text: 'Size', style: Theme.of(context).textTheme.bodySmall),
+                        TextSpan(text: ' White Red ', style: Theme.of(context).textTheme.bodyLarge),
+                        TextSpan(text: ' Size ', style: Theme.of(context).textTheme.bodySmall),
                         TextSpan(text: 'UK 08', style: Theme.of(context).textTheme.bodyLarge),
                       ]
                   )
