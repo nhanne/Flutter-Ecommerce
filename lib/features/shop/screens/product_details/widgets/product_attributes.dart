@@ -69,9 +69,9 @@ class TProductAttributes extends StatelessWidget {
             Wrap(
               spacing: 8,
               children: [
-                TChoiceChip(text: 'Green', selected: true, onSelected: (value){}),
-                TChoiceChip(text: 'Blue', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'Yellow', selected: false, onSelected: (value){}),
+                TChoiceChip(text: 'White', selected: false, onSelected: (value){}),
+                TChoiceChip(text: 'Blue', selected: true, onSelected: (value){}),
+                TChoiceChip(text: 'Black', selected: false, onSelected: (value){}),
               ],
             )
           ],
@@ -84,9 +84,9 @@ class TProductAttributes extends StatelessWidget {
             Wrap(
               spacing: 8,
               children: [
-                TChoiceChip(text: 'EU 34', selected: true, onSelected: (value){}),
-                TChoiceChip(text: 'EU 36', selected: false, onSelected: (value){}),
-                TChoiceChip(text: 'EU 38', selected: false, onSelected: (value){}),
+                TChoiceChip(text: 'M', selected: false, onSelected: (value){}),
+                TChoiceChip(text: 'L', selected: true, onSelected: (value){}),
+                TChoiceChip(text: 'XL', selected: false, onSelected: (value){}),
               ],
             ),
           ],

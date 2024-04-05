@@ -29,9 +29,9 @@ class TProductMetaData extends StatelessWidget {
             ),
             const SizedBox(width: TSizes.spaceBtwItems),
 
-            Text('\$250', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
+            Text('1.000.000', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
             const SizedBox(width: TSizes.spaceBtwItems),
-            TProductPriceText(price: '175', isLarge: true),
+            TProductPriceText(price: '750.000', isLarge: true),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),

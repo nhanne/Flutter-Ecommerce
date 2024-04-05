@@ -52,11 +52,11 @@ class CheckoutScreen extends StatelessWidget {
 
                     /// Divider
                     Divider(),
-                    SizedBox(height: TSizes.spaceBtwItems),
+                    // SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Payment Methods
                     TBillingPaymentSection(),
-                    SizedBox(height: TSizes.spaceBtwItems),
+                    // SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Address
                     TBillingAddressSection()
@@ -78,7 +78,7 @@ class CheckoutScreen extends StatelessWidget {
                     onPressed: () => Get.offAll(() => const NavigationMenu()),
                   ),
                 ),
-            child: const Text('Checkout \$256.0')),
+            child: const Text('Checkout 9.050.000 VNĐ')),
       ),
     );
   }
