@@ -1,11 +1,9 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
-import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 

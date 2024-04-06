@@ -26,7 +26,7 @@ class TRatingAndShare extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(onPressed: (){}, icon: Icon(Icons.share, size: TSizes.iconMd))
+        // IconButton(onPressed: (){}, icon: Icon(Icons.share, size: TSizes.iconMd))
       ],
     );
   }

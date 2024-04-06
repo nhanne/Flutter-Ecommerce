@@ -31,11 +31,11 @@ class TProductMetaData extends StatelessWidget {
 
             Text('1.000.000', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
             const SizedBox(width: TSizes.spaceBtwItems),
-            TProductPriceText(price: '750.000', isLarge: true),
+            const TProductPriceText(price: '750.000', isLarge: true),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-        const TProductTitleText(title: 'Green Nike Sports Shirt'),
+        const TProductTitleText(title: 'Blue Nike Sports Shirt'),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         Row(
           children: [

@@ -1,5 +1,4 @@
 import 'package:clothes/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
-import 'package:clothes/common/widgets/images/t_rounded_image.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -17,9 +16,9 @@ class TProductImageSlider extends StatelessWidget {
     return TCurvedEdgeWidget(
         child: Container(
           color: dark ? TColors.darkGrey : TColors.light,
-          child: Stack(
+          child: const Stack(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 400,
                 child: Padding(
                   padding: EdgeInsets.all(TSizes.productImageRadius * 2),

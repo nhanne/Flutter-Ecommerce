@@ -1,4 +1,3 @@
-import 'package:clothes/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:clothes/features/shop/screens/home/home.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/device/device_utility.dart';

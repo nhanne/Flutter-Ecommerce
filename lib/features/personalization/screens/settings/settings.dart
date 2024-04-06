@@ -4,7 +4,6 @@ import 'package:clothes/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:clothes/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/authentication/screens/login/login.dart';
-import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
 import 'package:clothes/features/personalization/screens/address/widgets/address.dart';
 import 'package:clothes/features/personalization/screens/profile/profile.dart';
 import 'package:clothes/util/constants/colors.dart';

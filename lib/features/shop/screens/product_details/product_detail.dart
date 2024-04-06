@@ -1,13 +1,7 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
-import 'package:clothes/common/widgets/section_heading.dart';
-import 'package:clothes/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:clothes/features/shop/screens/product_details/widgets/product_meta_data.dart';
-import 'package:clothes/features/shop/screens/product_reviews/product_review.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:readmore/readmore.dart';
 import 'widgets/bottom_add_to_cart_widget.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_detail_image_slider.dart';

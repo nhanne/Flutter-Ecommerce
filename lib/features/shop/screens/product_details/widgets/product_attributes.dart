@@ -1,9 +1,5 @@
 import 'package:clothes/common/widgets/chips/choice_chip.dart';
-import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
-import 'package:clothes/common/widgets/texts/product_price_text.dart';
-import 'package:clothes/common/widgets/texts/product_title_text.dart';
-import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,7 +60,7 @@ class TProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Color'),
+            const TSectionHeading(title: 'Color', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,
@@ -79,7 +75,7 @@ class TProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Size'),
+            const TSectionHeading(title: 'Size', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             Wrap(
               spacing: 8,

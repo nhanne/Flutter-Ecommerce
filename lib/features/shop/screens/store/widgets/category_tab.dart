@@ -1,9 +1,7 @@
-import 'package:clothes/common/widgets/brands/brand_show_case.dart';
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/shop/screens/all_products/all_products.dart';
-import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

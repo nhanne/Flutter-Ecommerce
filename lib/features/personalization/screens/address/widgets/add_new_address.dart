@@ -1,8 +1,6 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/util/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
@@ -11,7 +9,7 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: TAppBar(showBackArrow: true, title: Text('Add new Address')),
+      appBar: const TAppBar(showBackArrow: true, title: Text('Add new Address')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -40,7 +38,7 @@ class AddNewAddressScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwInputFields),
                   TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'country')),
                   const SizedBox(height: TSizes.defaultSpace),
-                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: Text('Save')),)
+                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text('Save')),)
               ],
             ),
            ),
