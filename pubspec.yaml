@@ -17,6 +17,7 @@ dependencies:
   http: ^1.1.0
   intl: ^0.18.1
   logger: ^2.0.1
+  lottie: ^2.7.0
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.3.1
   smooth_page_indicator: ^1.1.0
@@ -37,6 +38,10 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   capped_progress_indicator: ^0.0.2
 
+  # Firebase
+  firebase_core: ^2.28.0
+  firebase_auth: ^4.19.1
+  cloud_firestore: ^4.16.1
 
 
   #--------------- ./ PACKAGES END ------------------#
