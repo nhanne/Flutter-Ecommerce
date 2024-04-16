@@ -18,7 +18,7 @@ class ForgetPasswordController extends GetxController{
   sendEmailResetPassword() async {
     try{
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('Processing your request ... ', TImages.applePay);
+      TFullScreenLoader.openLoadingDialog('Processing your request ... ', TImages.dockerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -51,7 +51,7 @@ class ForgetPasswordController extends GetxController{
   resendPasswordResetEmail(String email) async {
     try{
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('Processing your request ... ', TImages.applePay);
+      TFullScreenLoader.openLoadingDialog('Processing your request ... ', TImages.dockerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();

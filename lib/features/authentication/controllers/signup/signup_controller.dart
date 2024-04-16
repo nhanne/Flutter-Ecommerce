@@ -28,7 +28,7 @@ class SignupController extends GetxController{
   Future<void> signup() async{
     try{
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('We are processing your information...', TImages.applePay);
+      TFullScreenLoader.openLoadingDialog('We are processing your information...', TImages.dockerAnimation);
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if(!isConnected) {
