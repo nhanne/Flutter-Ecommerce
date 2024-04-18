@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:clothes/common/widgets/shimmer.dart';
+import 'package:clothes/common/widgets/shimmers/shimmer.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';

@@ -1,6 +1,6 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/products/cart/cart_menu_icon.dart';
-import 'package:clothes/common/widgets/shimmer.dart';
+import 'package:clothes/common/widgets/shimmers/shimmer.dart';
 import 'package:clothes/features/personalization/controllers/user_controller.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/text_strings.dart';

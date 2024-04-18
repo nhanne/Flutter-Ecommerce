@@ -1,7 +1,7 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/images/t_circular_image.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
-import 'package:clothes/common/widgets/shimmer.dart';
+import 'package:clothes/common/widgets/shimmers/shimmer.dart';
 import 'package:clothes/features/personalization/controllers/user_controller.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
