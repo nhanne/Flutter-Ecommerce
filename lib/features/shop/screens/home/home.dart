@@ -4,11 +4,13 @@ import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/common/widgets/texts/section_heading.dart';
 import 'package:clothes/features/shop/screens/all_products/all_products.dart';
+import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/home_appbar.dart';
+import 'widgets/home_categories.dart';
 import 'widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,16 +36,16 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Categories
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                  //   child: Column(
-                  //     children: [
-                  //       TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: TColors.white),
-                  //       SizedBox(height: TSizes.spaceBtwItems),
-                  //       THomeCategories()
-                  //     ],
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: TColors.white),
+                        SizedBox(height: TSizes.spaceBtwItems),
+                        THomeCategories()
+                      ],
+                    ),
+                  ),
                   SizedBox(height: TSizes.spaceBtwSections),
 
                 ],
