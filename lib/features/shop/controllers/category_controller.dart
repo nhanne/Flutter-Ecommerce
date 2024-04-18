@@ -1,3 +1,5 @@
+import 'package:clothes/api/categories/api_categories.dart';
+import 'package:clothes/api/categories/category_model.dart';
 import 'package:clothes/data/models/category_model.dart';
 import 'package:clothes/data/repositories/categories/category_repository.dart';
 import 'package:clothes/util/loaders/loaders.dart';
@@ -11,9 +13,13 @@ class CategoryController extends GetxController{
   RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
   RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
 
+  // API
+  RxList<Category> categories = <Category>[].obs;
+
   @override
   void onInit(){
     fetchCategories();
+    fetchCategoriesAPI();
     super.onInit();
   }
 
@@ -31,5 +37,19 @@ class CategoryController extends GetxController{
     } finally {
       isLoading.value = false;
     }
+  }
+
+  Future<void> fetchCategoriesAPI() async{
+    APICategories.fetchCategories().then((dataFromServer) async {
+      try{
+        isLoading.value = true;
+        categories.assignAll(dataFromServer);
+
+      } catch (e) {
+        TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      } finally {
+        isLoading.value = false;
+      }
+    });
   }
 }

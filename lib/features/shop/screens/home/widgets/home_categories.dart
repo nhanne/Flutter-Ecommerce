@@ -2,7 +2,6 @@ import 'package:clothes/common/widgets/image_text/vertical_image_text.dart';
 import 'package:clothes/common/widgets/shimmers/category_shimmer.dart';
 import 'package:clothes/features/shop/controllers/category_controller.dart';
 import 'package:clothes/features/shop/screens/sub_category/sub_categories.dart';
-import 'package:clothes/util/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
