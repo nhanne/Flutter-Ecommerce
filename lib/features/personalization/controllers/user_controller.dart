@@ -5,11 +5,12 @@ import 'package:clothes/features/authentication/screens/login/login.dart';
 import 'package:clothes/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/loaders/loaders.dart';
-import 'package:clothes/util/login_signup/network_manager.dart';
+import 'package:clothes/util/helpers/network_manager.dart';
 import 'package:clothes/util/popups/full_screen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../util/constants/image_strings.dart';
 
@@ -20,6 +21,7 @@ class UserController extends GetxController {
   Rx<UserModel> user = UserModel.empty().obs;
 
   final hidePassword = false.obs;
+  final imageUploading = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
   final userRepository = Get.put(UserRepository());
@@ -47,25 +49,30 @@ class UserController extends GetxController {
   // Save user Record from any Registration provider
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        // Convert Name to First and Last name
-        final nameParts =
-            UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        final username =
-            UserModel.generateUsername(userCredentials.user!.displayName ?? '');
+      // First Update Rx User and then check if user data is already storage. If not stored new data
+      await fetchUserRecord();
 
-        // Map Data
-        final user = UserModel(
-            id: userCredentials.user!.uid,
-            firstName: nameParts[0],
-            lastName:
-                nameParts.length > 1 ? nameParts.sublist(1).join(' ') : ' ',
-            username: username,
-            email: userCredentials.user!.email ?? '',
-            phoneNumber: userCredentials.user!.phoneNumber ?? '',
-            profilePicture: userCredentials.user!.photoURL ?? '');
+      if(user.value.id.isEmpty){
+        if (userCredentials != null) {
+          // Convert Name to First and Last name
+          final nameParts =
+          UserModel.nameParts(userCredentials.user!.displayName ?? '');
+          final username =
+          UserModel.generateUsername(userCredentials.user!.displayName ?? '');
 
-        await userRepository.saveUserRecord(user);
+          // Map Data
+          final user = UserModel(
+              id: userCredentials.user!.uid,
+              firstName: nameParts[0],
+              lastName:
+              nameParts.length > 1 ? nameParts.sublist(1).join(' ') : ' ',
+              username: username,
+              email: userCredentials.user!.email ?? '',
+              phoneNumber: userCredentials.user!.phoneNumber ?? '',
+              profilePicture: userCredentials.user!.photoURL ?? '');
+
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       TLoaders.warningSnackBar(
@@ -150,6 +157,30 @@ class UserController extends GetxController {
     } catch (e) {
       TFullScreenLoader.stopLoading();
       TLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  // Upload Profile Image
+  uploadUserProfilePicture() async{
+    try{
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery, imageQuality: 70, maxHeight: 512, maxWidth: 512);
+      if(image != null){
+        imageUploading.value = true;
+        // Upload Image
+        final imageUrl = await userRepository.uploadIamges('Users/Images/Profile/', image);
+        // Update user image record
+        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+        await userRepository.updateSingleField(json);
+
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+
+        TLoaders.successSnackBar(title: 'Congratulations', message: 'Your Profile Image has been updated !');
+      }
+    } catch (e){
+      TLoaders.errorSnackBar(title: 'Oh Snap!', message: 'Something went wrong: $e');
+    } finally {
+      imageUploading.value = true;
     }
   }
 }

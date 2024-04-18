@@ -6,7 +6,7 @@ import 'package:clothes/data/repositories/user/user_repository.dart';
 import 'package:clothes/features/authentication/screens/signup/verify_email.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';
-import 'package:clothes/util/login_signup/network_manager.dart';
+import 'package:clothes/util/helpers/network_manager.dart';
 import 'package:clothes/util/popups/full_screen_loader.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';

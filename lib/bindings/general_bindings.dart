@@ -1,4 +1,4 @@
-import 'package:clothes/util/login_signup/network_manager.dart';
+import 'package:clothes/util/helpers/network_manager.dart';
 import 'package:get/get.dart';
 
 class GeneralBindings extends Bindings{
