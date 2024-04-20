@@ -3,7 +3,6 @@ import 'package:clothes/features/personalization/controllers/user_controller.dar
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TUserProfileTitle extends StatelessWidget {

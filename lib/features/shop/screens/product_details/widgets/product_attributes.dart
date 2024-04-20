@@ -1,7 +1,6 @@
 import 'package:clothes/common/widgets/chips/choice_chip.dart';
 import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/util/constants/sizes.dart';
-import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,6 @@ class TProductAttributes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Column(
       children: [
         // TRoundedContainer(

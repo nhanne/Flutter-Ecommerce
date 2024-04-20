@@ -128,6 +128,7 @@ class TImages {
   static const String productImage77= "assets/images/products/slipper-product.png";
   static const String productImage78= "assets/images/products/balenciaga_jacket.jpg";
 
+  static const String productImage= "https://ttnhan-001-site1.htempurl.com/Images/sp/";
 
 
 
@@ -140,6 +141,10 @@ class TImages {
   static const String promoBanner1 = "assets/images/products/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 = "assets/images/products/promo-banner-3.png";
+  static const String promoBanner4 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/1.jpg";
+  static const String promoBanner5 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/4.jpg";
+  static const String promoBanner6 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/5.jpg";
+
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";

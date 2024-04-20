@@ -1,3 +1,4 @@
+import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes/common/widgets/images/t_circular_image.dart';
 import 'package:clothes/common/widgets/texts/product_price_text.dart';
@@ -11,7 +12,9 @@ import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TProductMetaData extends StatelessWidget {
-  const TProductMetaData({super.key});
+  const TProductMetaData({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +27,27 @@ class TProductMetaData extends StatelessWidget {
             TRoundedContainer(
               radius: TSizes.sm,
               backgroundColor: TColors.secondary.withOpacity(0.8),
-              padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
-              child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: TSizes.sm, vertical: TSizes.xs),
+              child: Text('${product.infoProduct?.saleTag}',
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelLarge!
+                      .apply(color: TColors.black)),
             ),
             const SizedBox(width: TSizes.spaceBtwItems),
-
-            Text('1.000.000', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
+            Text(product.infoProduct!.getCostPrice,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall!
+                    .apply(decoration: TextDecoration.lineThrough)),
             const SizedBox(width: TSizes.spaceBtwItems),
-            const TProductPriceText(price: '750.000', isLarge: true),
+            TProductPriceText(
+                price: product.infoProduct!.getPrice, isLarge: true),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-        const TProductTitleText(title: 'Blue Nike Sports Shirt'),
+        TProductTitleText(title: product.infoProduct!.name!),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         Row(
           children: [
@@ -48,12 +60,15 @@ class TProductMetaData extends StatelessWidget {
         Row(
           children: [
             TCircularImage(
-                image: TImages.cosmeticsIcon,
-                width: 32,
-                height: 32,
-                overlayColor: darkMode ? TColors.white : TColors.black,
+              image: TImages.cosmeticsIcon,
+              width: 32,
+              height: 32,
+              overlayColor: darkMode ? TColors.white : TColors.black,
             ),
-            const TBrandTitleWithVerifiedIcon(title: 'Nike', brandTextSize: TextSizes.medium,),
+            TBrandTitleWithVerifiedIcon(
+              title: product.cateName!,
+              brandTextSize: TextSizes.medium,
+            ),
           ],
         )
       ],

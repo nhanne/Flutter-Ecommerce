@@ -1,3 +1,4 @@
+import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -5,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'widgets/bottom_add_to_cart_widget.dart';
 import 'widgets/product_attributes.dart';
 import 'widgets/product_detail_image_slider.dart';
-import 'widgets/rating_share_widget.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const TProductImageSlider(),
+            TProductImageSlider(product: product),
 
             /// Product Details
             Padding(
@@ -30,10 +32,10 @@ class ProductDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Rating & Share Button
-                  const TRatingAndShare(),
+                  // const TRatingAndShare(),
 
                   /// Price, Title, Stock & Brand
-                  const TProductMetaData(),
+                  TProductMetaData(product: product),
 
                   /// Attributes
                   const TProductAttributes(),

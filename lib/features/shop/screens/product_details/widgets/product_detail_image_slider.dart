@@ -1,14 +1,15 @@
+import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
-import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TProductImageSlider extends StatelessWidget {
   const TProductImageSlider({
-    super.key,
+    super.key, required this.product,
   });
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,14 @@ class TProductImageSlider extends StatelessWidget {
     return TCurvedEdgeWidget(
         child: Container(
           color: dark ? TColors.darkGrey : TColors.light,
-          child: const Stack(
+          child: Stack(
             children: [
               SizedBox(
                 height: 400,
                 child: Padding(
-                  padding: EdgeInsets.all(TSizes.productImageRadius * 2),
-                  child: Center(child: Image(image: AssetImage(TImages.productImage5))),
+                  padding: const EdgeInsets.all(0),
+                  child: Center(child: Image(image: NetworkImage(TImages.productImage +
+                      product.infoProduct!.picture.toString()))),
                 ),
               ),
               // Positioned(

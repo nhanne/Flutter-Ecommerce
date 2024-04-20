@@ -2,7 +2,9 @@ import 'package:clothes/api/categories/api_categories.dart';
 import 'package:clothes/api/categories/category_model.dart';
 import 'package:clothes/data/models/category_model.dart';
 import 'package:clothes/data/repositories/categories/category_repository.dart';
+import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';
+import 'package:clothes/util/popups/full_screen_loader.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController{
@@ -25,6 +27,8 @@ class CategoryController extends GetxController{
 
   Future<void> fetchCategories() async{
     try{
+      TFullScreenLoader.openLoadingDialog('Load Data...', TImages.dockerAnimation);
+
       isLoading.value = true;
 
       final categories = await _categoryRepository.getAllCategories();
@@ -36,6 +40,7 @@ class CategoryController extends GetxController{
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
+      TFullScreenLoader.stopLoading();
     }
   }
 
