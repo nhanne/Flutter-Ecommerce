@@ -1,4 +1,4 @@
-import 'package:clothes/features/authentication/controllers/login/login_controller.dart';
+import 'package:clothes/features/authentication/controllers/login_controller.dart';
 import 'package:clothes/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:clothes/features/authentication/screens/signup/signup.dart';
 import 'package:clothes/util/constants/sizes.dart';

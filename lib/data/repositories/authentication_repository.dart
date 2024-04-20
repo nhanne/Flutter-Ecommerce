@@ -1,4 +1,4 @@
-import 'package:clothes/data/repositories/user/user_repository.dart';
+import 'package:clothes/data/repositories/user_repository.dart';
 import 'package:clothes/features/authentication/screens/login/login.dart';
 import 'package:clothes/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:clothes/features/authentication/screens/signup/verify_email.dart';

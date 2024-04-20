@@ -1,4 +1,4 @@
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
 import 'package:clothes/features/personalization/controllers/user_controller.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';

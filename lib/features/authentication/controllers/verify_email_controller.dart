@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:clothes/common/widgets/success_screen/success_screen.dart';
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';

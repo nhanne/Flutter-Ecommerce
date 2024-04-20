@@ -1,5 +1,5 @@
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
-import 'package:clothes/features/authentication/controllers/signup/verify_email_controller.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
+import 'package:clothes/features/authentication/controllers/verify_email_controller.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/constants/text_strings.dart';

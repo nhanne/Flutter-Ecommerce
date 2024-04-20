@@ -1,7 +1,7 @@
 import 'package:clothes/api/categories/api_categories.dart';
 import 'package:clothes/api/categories/category_model.dart';
 import 'package:clothes/data/models/category_model.dart';
-import 'package:clothes/data/repositories/categories/category_repository.dart';
+import 'package:clothes/data/repositories/category_repository.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';
 import 'package:clothes/util/popups/full_screen_loader.dart';

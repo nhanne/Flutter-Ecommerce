@@ -1,8 +1,8 @@
 
 
 import 'package:clothes/data/models/user_model.dart';
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
-import 'package:clothes/data/repositories/user/user_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
+import 'package:clothes/data/repositories/user_repository.dart';
 import 'package:clothes/features/authentication/screens/signup/verify_email.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';

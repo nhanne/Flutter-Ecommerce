@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:clothes/data/models/user_model.dart';
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
 import 'package:clothes/util/exceptions/firebase_exceptions.dart';
 import 'package:clothes/util/exceptions/format_exceptions.dart';
 import 'package:clothes/util/exceptions/platform_exceptions.dart';

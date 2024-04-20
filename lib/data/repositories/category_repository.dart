@@ -1,5 +1,5 @@
 import 'package:clothes/data/models/category_model.dart';
-import 'package:clothes/data/services/cloud_storage/firebase_storage_service.dart';
+import 'package:clothes/data/services/firebase_storage_service.dart';
 import 'package:clothes/util/exceptions/firebase_exceptions.dart';
 import 'package:clothes/util/exceptions/platform_exceptions.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

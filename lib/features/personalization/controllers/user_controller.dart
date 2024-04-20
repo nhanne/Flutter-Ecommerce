@@ -1,6 +1,6 @@
 import 'package:clothes/data/models/user_model.dart';
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
-import 'package:clothes/data/repositories/user/user_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
+import 'package:clothes/data/repositories/user_repository.dart';
 import 'package:clothes/features/authentication/screens/login/login.dart';
 import 'package:clothes/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
 import 'package:clothes/util/constants/sizes.dart';
