@@ -20,7 +20,7 @@ class CategoryController extends GetxController{
 
   @override
   void onInit(){
-    fetchCategories();
+    // fetchCategories();
     fetchCategoriesAPI();
     super.onInit();
   }

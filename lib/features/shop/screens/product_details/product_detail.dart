@@ -52,7 +52,7 @@ class ProductDetailScreen extends StatelessWidget {
                   // const TSectionHeading(title: 'Description'),
                   // const SizedBox(height: TSizes.spaceBtwItems),
                   // const ReadMoreText(
-                  //   'This is aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                  //   'This is description',
                   //   trimLines: 2,
                   //   trimMode: TrimMode.Line,
                   //   trimCollapsedText: 'Show more',

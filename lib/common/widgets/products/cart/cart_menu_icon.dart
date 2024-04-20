@@ -9,10 +9,12 @@ class TCartCounterIcon extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.iconColor,
+    this.countItem = '0',
   });
 
   final VoidCallback onPressed;
   final Color iconColor;
+  final String countItem;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class TCartCounterIcon extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
             ),
             child: Center(
-              child: Text('2',
+              child: Text(countItem,
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!

@@ -64,7 +64,6 @@ class InfoProduct {
     }
   }
 
-
   InfoProduct.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     categoryId = json['categoryId'];
@@ -92,4 +91,6 @@ class InfoProduct {
     data['stockInDate'] = stockInDate;
     return data;
   }
+
+
 }
