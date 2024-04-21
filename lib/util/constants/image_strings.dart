@@ -153,6 +153,10 @@ class TImages {
   static const String banner6 = "assets/images/banners/banner_6.jpg";
   static const String banner7 = "assets/images/banners/banner_7.jpg";
   static const String banner8 = "assets/images/banners/banner_8.jpg";
+  static const String banner9 = "assets/images/banners/banner_9.jpg";
+  static const String banner10 = "assets/images/banners/banner_10.jpg";
+  static const String banner11 = "assets/images/banners/banner_11.jpg";
+  static const String banner12 = "assets/images/banners/banner_12.jpg";
 
 
   //Profile
@@ -166,6 +170,7 @@ class TImages {
   static const String paypal = "assets/icons/payment_methods/paypal.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String paystack = "assets/icons/payment_methods/paystack.png";
+  static const String shipCOD = "assets/icons/payment_methods/COD.png";
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
 

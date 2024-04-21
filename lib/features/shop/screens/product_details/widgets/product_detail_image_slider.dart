@@ -1,4 +1,3 @@
-import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
@@ -7,9 +6,9 @@ import 'package:flutter/material.dart';
 
 class TProductImageSlider extends StatelessWidget {
   const TProductImageSlider({
-    super.key, required this.product,
+    super.key, required this.image,
   });
-  final Product product;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class TProductImageSlider extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(0),
                   child: Center(child: Image(image: NetworkImage(TImages.productImage +
-                      product.infoProduct!.picture.toString()))),
+                      image))),
                 ),
               ),
               // Positioned(

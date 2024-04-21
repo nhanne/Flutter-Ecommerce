@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
-class Product {
+class Product extends ChangeNotifier{
   InfoProduct? infoProduct;
   String? cateName;
 
@@ -48,7 +49,7 @@ class InfoProduct {
   String get getPrice => NumberFormat.decimalPattern().format(unitPrice);
   String get getCostPrice{
     if(costPrice!.compareTo(unitPrice as num) > 0){
-      return NumberFormat.decimalPattern().format(costPrice);
+      return '${NumberFormat.decimalPattern().format(costPrice)} VNĐ';
     }
     else{
       return "";

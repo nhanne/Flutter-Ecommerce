@@ -1,4 +1,4 @@
-import 'package:clothes/api/products/product_model.dart';
+import 'package:clothes/api/stocks/stock_model.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes/common/widgets/images/t_circular_image.dart';
 import 'package:clothes/common/widgets/texts/product_price_text.dart';
@@ -9,16 +9,19 @@ import 'package:clothes/util/constants/enums.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class TProductMetaData extends StatelessWidget {
-  const TProductMetaData({super.key, required this.product});
+  const TProductMetaData({super.key, required this.stock});
 
-  final Product product;
+  final Stock stock;
 
   @override
   Widget build(BuildContext context) {
     final darkMode = THelperFunctions.isDarkMode(context);
+    final product = stock.product!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,25 +32,27 @@ class TProductMetaData extends StatelessWidget {
               backgroundColor: TColors.secondary.withOpacity(0.8),
               padding: const EdgeInsets.symmetric(
                   horizontal: TSizes.sm, vertical: TSizes.xs),
-              child: Text('${product.infoProduct?.saleTag}',
+              child: Text(product.saleTag,
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!
                       .apply(color: TColors.black)),
             ),
             const SizedBox(width: TSizes.spaceBtwItems),
-            Text(product.infoProduct!.getCostPrice,
+            Text(product.getCostPrice,
                 style: Theme.of(context)
                     .textTheme
                     .titleSmall!
                     .apply(decoration: TextDecoration.lineThrough)),
             const SizedBox(width: TSizes.spaceBtwItems),
-            TProductPriceText(
-                price: product.infoProduct!.getPrice, isLarge: true),
+            Expanded(
+              child: TProductPriceText(
+                  price: product.getPrice, isLarge: true, maxLines: 2),
+            ),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-        TProductTitleText(title: product.infoProduct!.name!),
+        TProductTitleText(title: product.name!),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         Row(
           children: [
@@ -66,7 +71,7 @@ class TProductMetaData extends StatelessWidget {
               overlayColor: darkMode ? TColors.white : TColors.black,
             ),
             TBrandTitleWithVerifiedIcon(
-              title: product.cateName!,
+              title: stock.cateName!,
               brandTextSize: TextSizes.medium,
             ),
           ],

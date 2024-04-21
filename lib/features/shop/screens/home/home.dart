@@ -18,7 +18,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = ProductController.instance;
-    final products = controller.products.take(4).toList();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -36,19 +35,6 @@ class HomeScreen extends StatelessWidget {
                     text: 'Search In Store',
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
-
-                  /// Categories
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                  //   child: Column(
-                  //     children: [
-                  //       TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: TColors.white),
-                  //       SizedBox(height: TSizes.spaceBtwItems),
-                  //       THomeCategories()
-                  //     ],
-                  //   ),
-                  // ),
-                  // SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -74,16 +60,17 @@ class HomeScreen extends StatelessWidget {
 
                   Obx(
                     () {
-                      // if(controller.isLoading.value) return const TVerticalProductShimmer();
                       if(controller.products.isEmpty){
                         return const Center(child: CircularProgressIndicator());
                       }
-                      return TGridLayout(
-                        itemCount: products.length,
-                        itemBuilder: (_, index) {
-                          return TProductCardVertical(product: products[index]);
-                        },
-                      );
+                      else {
+                        return TGridLayout(
+                          itemCount: 4,
+                          itemBuilder: (_, index) {
+                            return TProductCardVertical(product: controller.products[index]);
+                          },
+                        );
+                      }
                     },
                   ),
                 ],

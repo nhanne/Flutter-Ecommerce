@@ -23,21 +23,10 @@ class TCategoryTab extends StatelessWidget {
             padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
-                // const TBrandShowcase(images: [
-                //   TImages.productImage3,
-                //   TImages.productImage2,
-                //   TImages.productImage1
-                // ]),
-                // const TBrandShowcase(images: [
-                //   TImages.productImage3,
-                //   TImages.productImage2,
-                //   TImages.productImage1
-                // ]),
-                // const SizedBox(height: TSizes.spaceBtwItems),
                 TSectionHeading(
                     title: 'You might like',
                     showActionButton: true,
-                    onPressed: () => Get.offAll(() => const AllProducts())),
+                    onPressed: () => Get.to(() => const AllProducts())),
                 const SizedBox(height: TSizes.spaceBtwItems),
                 TGridLayout(
                     itemCount: products.length,

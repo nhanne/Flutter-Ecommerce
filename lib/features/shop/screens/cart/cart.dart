@@ -1,8 +1,11 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
+import 'package:clothes/data/models/cart_model.dart';
 import 'package:clothes/features/shop/screens/checkout/checkout.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 import 'widgets/cart_items.dart';
 
@@ -11,22 +14,26 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(showBackArrow: true, title: Text('Cart', style: Theme.of(context).textTheme.headlineSmall)),
-      body: const Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
-        child: TCartItems(),
-      ),
+    return Consumer<Cart>(builder: (context, cartViewModel, child) {
+      return Scaffold(
+          appBar: TAppBar(
+              showBackArrow: true,
+              title: Text('Cart',
+                  style: Theme.of(context).textTheme.headlineSmall)),
+          body: Padding(
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
+            child: TCartItems(cartViewModel: cartViewModel),
+          ),
 
-      /// Checkout Button
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(onPressed: () => Get.to(() => const CheckoutScreen()), child: const Text('Total 9.000.000 VNĐ')),
-      ),
-    );
+          /// Checkout Button
+          bottomNavigationBar: Padding(
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
+            child: ElevatedButton(
+              onPressed: () => Get.to(() => const CheckoutScreen()),
+              child: Text(
+                  'Total: ${NumberFormat.decimalPattern().format(cartViewModel.totalPriceCart)} VNĐ'),
+            ),
+          ));
+    });
   }
 }
-
-
-
-

@@ -55,19 +55,16 @@ class ProductController extends GetxController {
             a.infoProduct!.stockInDate!.compareTo(b.infoProduct!.stockInDate!));
         break;
       case 'Sale':
-        products.sort((a, b) {
-          if (b.infoProduct!.sale! > 0) {
-            return b.infoProduct!.sale!.compareTo(a.infoProduct!.sale!);
-          } else if (a.infoProduct!.sale! > 0) {
-            return -1;
-          } else {
-            return 1;
-          }
-        });
+        products.sort((a, b) =>
+          a.infoProduct!.sale!.compareTo(b.infoProduct!.sale!));
         break;
       default:
         products.sort(
             (a, b) => a.infoProduct!.name!.compareTo(b.infoProduct!.name!));
     }
+  }
+
+  void searchProduct(String key){
+
   }
 }

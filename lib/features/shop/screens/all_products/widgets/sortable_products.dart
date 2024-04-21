@@ -10,13 +10,14 @@ class TSortableProduct extends StatefulWidget {
   const TSortableProduct({
     super.key,
   });
-  
+
   @override
   State<TSortableProduct> createState() => _TSortableProductState();
 }
 
 class _TSortableProductState extends State<TSortableProduct> {
   late ProductController controller;
+
   @override
   void initState() {
     super.initState();
@@ -34,8 +35,9 @@ class _TSortableProductState extends State<TSortableProduct> {
           onChanged: (value) {
             onSortClicked(value!);
           },
-          items: ['Higher Price', 'Name', 'Lower Price', 'Sale', 'Popularity']
-              .map((option) => DropdownMenuItem(value: option, child: Text(option)))
+          items: ['Higher Price', 'Lower Price', 'Sale', 'Name', 'Popularity']
+              .map((option) =>
+                  DropdownMenuItem(value: option, child: Text(option)))
               .toList(),
         ),
         const SizedBox(height: TSizes.spaceBtwSections),
@@ -44,15 +46,16 @@ class _TSortableProductState extends State<TSortableProduct> {
         Obx(
           () => TGridLayout(
               itemCount: controller.products.length,
-              itemBuilder: (_, index) => TProductCardVertical(product: controller.products[index])),
+              itemBuilder: (_, index) =>
+                  TProductCardVertical(product: controller.products[index])),
         )
       ],
     );
   }
 
-  void onSortClicked(String sort){
+  void onSortClicked(String sort) {
     setState(() {
-       controller.sortProducts(sort);
+      controller.sortProducts(sort);
     });
   }
 }

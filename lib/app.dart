@@ -1,11 +1,12 @@
+import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/data/models/cart_model.dart';
+import 'package:clothes/features/shop/controllers/stock_controller.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:clothes/util/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
 import 'bindings/general_bindings.dart';
 import 'features/shop/controllers/category_controller.dart';
 import 'features/shop/controllers/product_controller.dart';
@@ -17,9 +18,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(CategoryController());
     Get.put(ProductController());
+    Get.put(StockController());
 
-    return ChangeNotifierProvider<Cart>(
-      create: ((context) => Cart()),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Cart()),
+        ChangeNotifierProvider(create: (__) => Product()),
+      ],
       child: GetMaterialApp(
         title: TTexts.appName,
         themeMode: ThemeMode.system,
