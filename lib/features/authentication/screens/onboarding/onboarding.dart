@@ -1,4 +1,4 @@
-import 'package:clothes/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:clothes/features/authentication/controllers/onboarding_controller.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:clothes/features/authentication/controllers/signup/signup_controller.dart';
+import 'package:clothes/features/authentication/controllers/signup_controller.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:clothes/util/validators/validation.dart';

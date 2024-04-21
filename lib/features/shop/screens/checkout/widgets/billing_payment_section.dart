@@ -16,7 +16,7 @@ class TBillingPaymentSection extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         children: [
-          TSectionHeading(title: 'Payment Method', buttonTitle: 'Change', onPressed: (){}),
+          TSectionHeading(title: 'Payment Method', buttonTitle: '', onPressed: (){}),
           const SizedBox(height: TSizes.spaceBtwItems / 2),
           Row(
             children: [
@@ -28,7 +28,7 @@ class TBillingPaymentSection extends StatelessWidget {
                 child: const Image(image: AssetImage(TImages.applePay), fit: BoxFit.contain),
               ),
               const SizedBox(width: TSizes.spaceBtwItems / 2),
-              Text('Apple Pay', style: Theme.of(context).textTheme.bodyLarge),
+              Text('Cash on Delivery', style: Theme.of(context).textTheme.bodyLarge),
             ],
           )
         ],

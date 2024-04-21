@@ -3,6 +3,7 @@ import 'package:clothes/common/widgets/custom_shapes/containers/search_container
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/common/widgets/texts/section_heading.dart';
+import 'package:clothes/features/shop/controllers/product_controller.dart';
 import 'package:clothes/features/shop/screens/all_products/all_products.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
@@ -16,6 +17,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = ProductController.instance;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -32,20 +35,6 @@ class HomeScreen extends StatelessWidget {
                     text: 'Search In Store',
                   ),
                   SizedBox(height: TSizes.spaceBtwSections),
-
-                  /// Categories
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: TSizes.defaultSpace),
-                  //   child: Column(
-                  //     children: [
-                  //       TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: TColors.white),
-                  //       SizedBox(height: TSizes.spaceBtwItems),
-                  //       THomeCategories()
-                  //     ],
-                  //   ),
-                  // ),
-                  SizedBox(height: TSizes.spaceBtwSections),
-
                 ],
               ),
             ),
@@ -61,13 +50,28 @@ class HomeScreen extends StatelessWidget {
                     TImages.promoBanner3
                   ]),
                   const SizedBox(height: TSizes.spaceBtwSections),
+
                   ///heading
-                  TSectionHeading(title: 'Popular Products', onPressed: () => Get.to(() => const AllProducts())),
+                  TSectionHeading(
+                      title: 'Best Seller',
+                      showActionButton: true,
+                      onPressed: () => Get.to(() => const AllProducts())),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
-                  TGridLayout(
-                      itemCount: 4,
-                      itemBuilder: (_, index) => const TProductCardVertical()
+                  Obx(
+                    () {
+                      if(controller.products.isEmpty){
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                      else {
+                        return TGridLayout(
+                          itemCount: 4,
+                          itemBuilder: (_, index) {
+                            return TProductCardVertical(product: controller.products[index]);
+                          },
+                        );
+                      }
+                    },
                   ),
                 ],
               ),

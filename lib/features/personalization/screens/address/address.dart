@@ -1,77 +1,41 @@
-
 import 'package:clothes/common/widgets/appbar/appbar.dart';
-import 'package:clothes/common/widgets/images/t_circular_image.dart';
-import 'package:clothes/common/widgets/section_heading.dart';
-import 'package:clothes/features/personalization/screens/profile/widgets/profile_menu.dart';
-import 'package:clothes/util/constants/image_strings.dart';
+import 'package:clothes/features/personalization/screens/address/widgets/add_new_address.dart';
+import 'package:clothes/features/personalization/screens/address/widgets/single_address.dart';
+import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
+class UserAddressScreen extends StatelessWidget{
+  const UserAddressScreen({Key? key}) :  super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Scaffold(
-      appBar: const TAppBar(showBackArrow: true, title: Text('Profile')),
-      body: SingleChildScrollView(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: TColors.primary,
+        onPressed: () => Get.to(() => const AddNewAddressScreen()),
+        child: const Icon(Iconsax.add, color: TColors.white),       
+      ),
+      appBar: TAppBar(
+        showBackArrow: true,
+        title: Text('Address', style: Theme.of(context).textTheme.headlineSmall),
+      ),
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              /// Profile Picture
-              SizedBox(
-                width: double.infinity,
-                child: Column(
-                  children: [
-                    const TCircularImage(image: TImages.user, width: 80, height: 80),
-                    TextButton(onPressed: (){}, child: const Text('Change Profile Picture')),
-                  ],
-                ),
-              ),
-              /// Details
-              const SizedBox(height: TSizes.spaceBtwItems / 2),
-              const Divider(),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              const TSectionHeading(title: 'Profile Information', showActionButton: false),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              TProfileMenu(title: 'Name', value: 'Tran Thanh Nhan', onPressed: () {}),
-              TProfileMenu(title: 'Username', value: 'nhantran.netdev', onPressed: () {}),
-
-              const SizedBox(height: TSizes.spaceBtwItems / 2),
-              const Divider(),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              /// Heading Personal Info
-              const TSectionHeading(title: 'Personal Information', showActionButton: false),
-              const SizedBox(height: TSizes.spaceBtwItems),
-
-              TProfileMenu(title: 'User ID', value: 'Tran Thanh Nhan', icon: Iconsax.copy, onPressed: () {}),
-              TProfileMenu(title: 'Email', value: 'nhantran.netdev@gmail.com', onPressed: () {}),
-              TProfileMenu(title: 'Phone Number', value: '+84 858 032 268', onPressed: () {}),
-              TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
-              TProfileMenu(title: 'Date of Birth', value: '9 Dec 2002', onPressed: () {}),
-
-              Center(
-                child: TextButton(
-                  onPressed: (){},
-                  child: const Text('Close Account', style: TextStyle(color: Colors.red)),
-                ),
-              )
-
+              TSingleAddress(selectedAddress: false),
+              TSingleAddress(selectedAddress: true),
             ],
-          ),
-        ),
+
+          )
+        )
       ),
     );
   }
 }
-
-
-

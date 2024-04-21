@@ -128,6 +128,7 @@ class TImages {
   static const String productImage77= "assets/images/products/slipper-product.png";
   static const String productImage78= "assets/images/products/balenciaga_jacket.jpg";
 
+  static const String productImage= "https://ttnhan-001-site1.htempurl.com/Images/sp/";
 
 
 
@@ -140,6 +141,10 @@ class TImages {
   static const String promoBanner1 = "assets/images/products/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";
   static const String promoBanner3 = "assets/images/products/promo-banner-3.png";
+  static const String promoBanner4 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/1.jpg";
+  static const String promoBanner5 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/4.jpg";
+  static const String promoBanner6 = "https://ttnhan-001-site1.htempurl.com/Images/slideshow/5.jpg";
+
   static const String banner1 = "assets/images/banners/banner_1.jpg";
   static const String banner2 = "assets/images/banners/banner_2.jpg";
   static const String banner3 = "assets/images/banners/banner_3.jpg";
@@ -148,6 +153,10 @@ class TImages {
   static const String banner6 = "assets/images/banners/banner_6.jpg";
   static const String banner7 = "assets/images/banners/banner_7.jpg";
   static const String banner8 = "assets/images/banners/banner_8.jpg";
+  static const String banner9 = "assets/images/banners/banner_9.jpg";
+  static const String banner10 = "assets/images/banners/banner_10.jpg";
+  static const String banner11 = "assets/images/banners/banner_11.jpg";
+  static const String banner12 = "assets/images/banners/banner_12.jpg";
 
 
   //Profile
@@ -161,7 +170,11 @@ class TImages {
   static const String paypal = "assets/icons/payment_methods/paypal.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String paystack = "assets/icons/payment_methods/paystack.png";
+  static const String shipCOD = "assets/icons/payment_methods/COD.png";
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+
+  static const String dockerAnimation = "assets/images/animations/141594-animation-of-docer.json";
+
 }
 

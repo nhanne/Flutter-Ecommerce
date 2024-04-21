@@ -1,12 +1,12 @@
 
 
 import 'package:clothes/data/models/user_model.dart';
-import 'package:clothes/data/repositories/authentication/authentication_repository.dart';
-import 'package:clothes/data/repositories/user/user_repository.dart';
+import 'package:clothes/data/repositories/authentication_repository.dart';
+import 'package:clothes/data/repositories/user_repository.dart';
 import 'package:clothes/features/authentication/screens/signup/verify_email.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/loaders/loaders.dart';
-import 'package:clothes/util/login_signup/network_manager.dart';
+import 'package:clothes/util/helpers/network_manager.dart';
 import 'package:clothes/util/popups/full_screen_loader.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -28,7 +28,7 @@ class SignupController extends GetxController{
   Future<void> signup() async{
     try{
       // Start Loading
-      TFullScreenLoader.openLoadingDialog('We are processing your information...', TImages.applePay);
+      TFullScreenLoader.openLoadingDialog('We are processing your information...', TImages.dockerAnimation);
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if(!isConnected) {
@@ -68,7 +68,7 @@ class SignupController extends GetxController{
       TFullScreenLoader.stopLoading();
       TLoaders.successSnackBar(title: 'Congratulations', message: 'Your account has been created! Verify email to continue,');
       
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() =>  VerifyEmailScreen(email: email.text.trim()));
 
     }catch(e){
       TFullScreenLoader.stopLoading();

@@ -1,3 +1,4 @@
+import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/styles/shadow.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:clothes/common/widgets/icons/t_circular_icon.dart';
@@ -5,24 +6,26 @@ import 'package:clothes/common/widgets/images/t_rounded_image.dart';
 import 'package:clothes/common/widgets/texts/product_price_text.dart';
 import 'package:clothes/common/widgets/texts/product_title_text.dart';
 import 'package:clothes/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
-import 'package:clothes/features/shop/screens/product_details/product_detail.dart';
+import 'package:clothes/features/shop/controllers/stock_controller.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/image_strings.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TProductCardVertical extends StatelessWidget {
-  const TProductCardVertical({super.key});
+  const TProductCardVertical({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final controller = StockController.instance;
 
     return GestureDetector(
-      onTap: () => Get.to(()=> const ProductDetailScreen()),
+      onTap: () => controller.fetchStockAPI(product.infoProduct!.id.toString()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -40,40 +43,54 @@ class TProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// Thumbnail Image
-                  const TRoundedImage(imageUrl: TImages.productImage78, applyImageRadius: true),
-      
+                  TRoundedImage(
+                      imageUrl: TImages.productImage +
+                          product.infoProduct!.picture.toString(),
+                      applyImageRadius: true,
+                      isNetworkImage: true),
+
                   /// Sale Tag
                   Positioned(
-                      top: 12,
-                      child: TRoundedContainer(
-                        radius: TSizes.sm,
-                        backgroundColor: TColors.primary.withOpacity(0.8),
-                        padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
-                        child: Text('10%', style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black)),
-                      ),
+                    top: 12,
+                    child: TRoundedContainer(
+                      radius: TSizes.sm,
+                      backgroundColor: TColors.primary.withOpacity(0.8),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: TSizes.sm, vertical: TSizes.xs),
+                      child: Text(product.infoProduct!.saleTag,
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .apply(color: TColors.black)),
+                    ),
                   ),
+
                   /// Favourite Icon Button
                   const Positioned(
                       top: 0,
                       right: 0,
-                      child: TCircularIcon(icon: Iconsax.heart5, color: Colors.red)
-                  ),
+                      child: TCircularIcon(
+                          icon: Iconsax.heart5, color: Colors.red)),
                 ],
               ),
             ),
-      
+
             const SizedBox(height: TSizes.spaceBtwItems / 2),
+
             /// Details
-            const Padding(
-              padding: EdgeInsets.only(left: TSizes.sm),
+            Padding(
+              padding: const EdgeInsets.only(left: TSizes.sm),
               child: SizedBox(
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TProductTitleText(title: 'Winter Jacket', smallSize: true,),
-                    SizedBox(height: TSizes.spaceBtwItems / 2),
-                    TBrandTitleWithVerifiedIcon(title: 'Balenciaga'),
+                    TProductTitleText(
+                      title: product.infoProduct!.name.toString(),
+                      smallSize: true,
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwItems / 2),
+                    TBrandTitleWithVerifiedIcon(title: product.cateName!),
                   ],
                 ),
               ),
@@ -83,10 +100,13 @@ class TProductCardVertical extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Expanded(
+                Expanded(
                   child: Padding(
-                    padding: EdgeInsets.only(left: TSizes.sm),
-                    child: TProductPriceText(price: '13.500.000', maxLines: 2,),
+                    padding: const EdgeInsets.only(left: TSizes.sm),
+                    child: TProductPriceText(
+                      price: product.infoProduct!.getPrice.toString(),
+                      maxLines: 2,
+                    ),
                   ),
                 ),
                 Container(
@@ -100,7 +120,8 @@ class TProductCardVertical extends StatelessWidget {
                   child: const SizedBox(
                     width: TSizes.iconMd * 1.2,
                     height: TSizes.iconMd * 1.2,
-                    child: Center(child: Icon(Iconsax.add, color: TColors.white)),
+                    child:
+                        Center(child: Icon(Iconsax.add, color: TColors.white)),
                   ),
                 )
               ],
@@ -111,11 +132,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
