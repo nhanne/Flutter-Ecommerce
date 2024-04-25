@@ -6,6 +6,7 @@ import 'package:clothes/common/widgets/section_heading.dart';
 import 'package:clothes/features/authentication/screens/login/login.dart';
 import 'package:clothes/features/personalization/screens/address/address.dart';
 import 'package:clothes/features/personalization/screens/profile/profile.dart';
+import 'package:clothes/features/shop/screens/order/order.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,12 @@ class SettingsScreen extends StatelessWidget {
                   // TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons', onTap: (){}),
                   // TSettingsMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message', onTap: (){}),
                   // TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts', onTap: (){}),
-                  //
+                  TSettingsMenuTile(
+                    icon: Iconsax.bag_tick,
+                    title: 'My Orders', 
+                    subTitle: 'In progress and Completed Orders', 
+                    onTap: () => Get.to(() => const OrderScreen()),
+                    ),
                   // const SizedBox(height: TSizes.spaceBtwSections),
                   // const TSectionHeading(title: 'App Setting', showActionButton: false),
                   // const SizedBox(height: TSizes.spaceBtwItems),
