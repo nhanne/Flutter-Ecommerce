@@ -22,7 +22,7 @@ class TSearchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(SearchScreen()),
+      onTap: () => Get.to(const SearchScreen()),
       child: Padding(
         padding: padding,
         child: Container(

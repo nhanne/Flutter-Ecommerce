@@ -50,7 +50,10 @@ class AddNewAddressScreen extends StatelessWidget {
                   ],
                 ),
                   const SizedBox(height: TSizes.spaceBtwInputFields),
-                  TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'country')),
+                  TextFormField(
+                      controller: controller.country,
+                      validator: (value) => TValidator.validateEmptyText('Country', value),
+                      decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Country')),
                   const SizedBox(height: TSizes.defaultSpace),
                   SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.addNewAddress(), child: const Text('Save')),)
               ],

@@ -8,9 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-
-
-
 class TSingleAddress extends StatelessWidget{
   const TSingleAddress({
     super.key, required this.address, required this.onTap,
@@ -29,7 +26,7 @@ class TSingleAddress extends StatelessWidget{
         final selectedAddressId = controller.selectedAddress.value.id;
         final selectedAddress = selectedAddressId == address.id;
         return InkWell(
-          onTap: onTap,
+          onTap: () => controller.selectAddress(address),
           child: TRoundedContainer(
               width: double.infinity,
               showBorder: true,

@@ -8,7 +8,6 @@ import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import 'widgets/change_name.dart';
 import 'widgets/profile_menu.dart';
 
