@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 class Product extends ChangeNotifier{
   InfoProduct? infoProduct;
   String? cateName;
+  var listFavouriteProducts = <Product>[];
 
   Product({this.infoProduct, this.cateName});
 
@@ -13,12 +14,21 @@ class Product extends ChangeNotifier{
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (infoProduct != null) {
       data['p'] = infoProduct!.toJson();
     }
     data['cateName'] = cateName;
     return data;
+  }
+
+  clickFavourite(Product item){
+    if(listFavouriteProducts.contains(item)){
+      listFavouriteProducts.remove(item);
+    }else{
+      listFavouriteProducts.add(item);
+    }
+    notifyListeners();
   }
 }
 
@@ -49,7 +59,7 @@ class InfoProduct {
   String get getPrice => NumberFormat.decimalPattern().format(unitPrice);
   String get getCostPrice{
     if(costPrice!.compareTo(unitPrice as num) > 0){
-      return '${NumberFormat.decimalPattern().format(costPrice)} VNĐ';
+      return NumberFormat.decimalPattern().format(costPrice);
     }
     else{
       return "";
@@ -95,3 +105,5 @@ class InfoProduct {
 
 
 }
+
+

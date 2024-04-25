@@ -3,7 +3,6 @@ import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/features/shop/controllers/product_controller.dart';
-import 'package:clothes/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,4 @@
 import 'package:clothes/common/widgets/login_signup/form_diveder.dart';
-import 'package:clothes/common/widgets/login_signup/social_buttons.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,7 @@ class SignupScreen extends StatelessWidget {
               const SizedBox(height: TSizes.defaultSpace),
 
               /// Social Buttons
-              const TSocialButtons(),
+              // const TSocialButtons(),
             ],
           ),
         ),
