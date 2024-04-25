@@ -25,7 +25,7 @@ class TBillingPaymentSection extends StatelessWidget {
                 height: 35,
                 backgroundColor: dark ? TColors.light : TColors.white,
                 padding: const EdgeInsets.all(TSizes.sm),
-                child: const Image(image: AssetImage(TImages.applePay), fit: BoxFit.contain),
+                child: const Image(image: AssetImage(TImages.cod), fit: BoxFit.contain),
               ),
               const SizedBox(width: TSizes.spaceBtwItems / 2),
               Text('Cash on Delivery', style: Theme.of(context).textTheme.bodyLarge),

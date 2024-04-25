@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'bindings/general_bindings.dart';
+import 'features/personalization/controllers/address_controller.dart';
 import 'features/shop/controllers/category_controller.dart';
 import 'features/shop/controllers/product_controller.dart';
 
@@ -19,6 +20,7 @@ class App extends StatelessWidget {
     Get.put(CategoryController());
     Get.put(ProductController());
     Get.put(StockController());
+    Get.put(AddressController());
 
     return MultiProvider(
       providers: [

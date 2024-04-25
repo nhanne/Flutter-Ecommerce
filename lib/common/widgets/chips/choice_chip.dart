@@ -1,5 +1,4 @@
 import 'package:clothes/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:clothes/features/shop/controllers/stock_controller.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

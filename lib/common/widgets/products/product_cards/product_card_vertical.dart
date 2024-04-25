@@ -1,7 +1,6 @@
 import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/common/styles/shadow.dart';
 import 'package:clothes/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:clothes/common/widgets/icons/t_circular_icon.dart';
 import 'package:clothes/common/widgets/images/t_rounded_image.dart';
 import 'package:clothes/common/widgets/texts/product_price_text.dart';
 import 'package:clothes/common/widgets/texts/product_title_text.dart';
@@ -66,11 +65,17 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   /// Favourite Icon Button
-                  const Positioned(
-                      top: 0,
-                      right: 0,
-                      child: TCircularIcon(
-                          icon: Iconsax.heart5, color: Colors.red)),
+                  // Consumer<Product>(
+                  //   builder: (context, productModel, child) {
+                  //     return Positioned(
+                  //         top: 0,
+                  //         right: 0,
+                  //         child: Obx(() {
+                  //           return const TCircularIcon(
+                  //               icon: Iconsax.heart5, color: Colors.red);
+                  //         }));
+                  //   },
+                  // )
                 ],
               ),
             ),
