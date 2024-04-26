@@ -3,7 +3,9 @@ class Category {
   String? code;
   String? name;
 
-  Category({this.id, this.code, this.name});
+  Category({
+    this.id, this.code, this.name
+  });
 
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(

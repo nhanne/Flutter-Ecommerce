@@ -1,5 +1,5 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
-import 'package:clothes/features/shop/screens/order/widgets/order_list.dart';
+import 'package:clothes/features/personalization/screens/order/widgets/order_list.dart';
 import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 

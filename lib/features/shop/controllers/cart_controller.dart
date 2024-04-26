@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:clothes/common/widgets/success_screen/success_screen.dart';
 import 'package:clothes/data/models/cart_model.dart';
 import 'package:clothes/data/models/order_detail_model.dart';
-import 'package:clothes/data/models/order_model.dart';
+import 'package:clothes/api/orders/order_model.dart';
 import 'package:clothes/features/personalization/controllers/address_controller.dart';
 import 'package:clothes/navigation_menu.dart';
 import 'package:clothes/util/constants/image_strings.dart';
@@ -61,7 +61,9 @@ class CartController extends GetxController {
         phoneNumber: selectAddress.phoneNumber,
         address: selectAddress.toString(),
         accountId: user!.uid,
-        orderDetails: orderDetails);
+        orderTime: DateTime.now(),
+        orderStatus: 1,
+    );
     String jsonOrderModel = convertOrderModelToJson(orderModel);
     try {
       var response = await http.post(
@@ -99,7 +101,7 @@ class CartController extends GetxController {
       'PhoneNumber': orderModel.phoneNumber,
       'Address': orderModel.address,
       'FlutterAccountId': orderModel.accountId,
-      'ListOrderDetails': convertOrderDetailsListToJson(orderModel.orderDetails),
+      'ListOrderDetails': convertOrderDetailsListToJson(orderDetails),
     };
 
     return json.encode(orderModelJson);
