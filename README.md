@@ -1,4 +1,4 @@
-# clothes
+# Clothing Store
 
 A new Flutter project.
 
