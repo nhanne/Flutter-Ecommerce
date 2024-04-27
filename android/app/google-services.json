@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "710173019761",
+    "project_id": "ecommerceapp-81407",
+    "storage_bucket": "ecommerceapp-81407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710173019761:android:ce7443975a6819ec6755d0",
+        "android_client_info": {
+          "package_name": "com.example.clothes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710173019761-carqr2mrj014trhgqrm6224gav2bubgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clothes",
+            "certificate_hash": "9bdaf3003c043fdafcfaeb70c4d9810592bf8808"
+          }
+        },
+        {
+          "client_id": "710173019761-6423uke1feml82pck38t65b3e2f5j3js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7BLj85US7Rl45OIVMZtaKr-IthXwmI60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710173019761-6423uke1feml82pck38t65b3e2f5j3js.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710173019761-3a4igcsj0qpm899j5perp67pt7m6e1sm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.clothes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
