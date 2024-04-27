@@ -1,6 +1,5 @@
 import 'package:clothes/api/products/product_model.dart';
 import 'package:clothes/data/models/cart_model.dart';
-import 'package:clothes/features/personalization/controllers/order_controller.dart';
 import 'package:clothes/features/shop/controllers/stock_controller.dart';
 import 'package:clothes/util/constants/colors.dart';
 import 'package:clothes/util/constants/text_strings.dart';
@@ -22,7 +21,6 @@ class App extends StatelessWidget {
     Get.put(ProductController());
     Get.put(StockController());
     Get.put(AddressController());
-    Get.put(OrderController());
 
     return MultiProvider(
       providers: [

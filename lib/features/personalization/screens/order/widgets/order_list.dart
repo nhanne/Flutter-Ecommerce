@@ -12,10 +12,10 @@ class TOrderListItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-    final controller = OrderController.instance;
+    final controller = Get.put(OrderController());
 
     return Obx(() {
+      final dark = THelperFunctions.isDarkMode(context);
       return ListView.separated(
         shrinkWrap: true,
         itemCount: controller.orders.length,
