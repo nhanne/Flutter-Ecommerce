@@ -21,7 +21,7 @@ class TProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Color', showActionButton: false),
+            const TSectionHeading(title: 'Màu sắc', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -52,7 +52,7 @@ class TProductAttributes extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Size', showActionButton: false),
+            const TSectionHeading(title: 'Kích cỡ', showActionButton: false),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,

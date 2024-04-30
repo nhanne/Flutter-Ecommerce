@@ -14,15 +14,15 @@ class OrderController extends GetxController {
   String getStatus(int status){
     switch(status){
       case 0:
-        return 'New';
+        return 'Mới';
       case 1:
-        return 'Waiting';
+        return 'Chờ xử lí';
       case 2:
-        return 'Cancel';
+        return 'Đã hủy';
       case 3:
-        return 'Done';
+        return 'Hoàn thành';
     }
-    return 'not found';
+    return 'không tìm thấy';
   }
 
   String formatDate(DateTime dateTime){
@@ -52,7 +52,7 @@ class OrderController extends GetxController {
       try {
         orders.assignAll(dataFromServer);
       } catch (e) {
-        TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+        TLoaders.errorSnackBar(title: 'Lỗi!', message: e.toString());
       }
     });
   }

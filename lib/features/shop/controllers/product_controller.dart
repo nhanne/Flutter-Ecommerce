@@ -10,7 +10,7 @@ class ProductController extends GetxController {
 
   // API
   RxList<Product> products = <Product>[].obs;
-  final RxString selectedSortOption = 'Name'.obs;
+  final RxString selectedSortOption = 'Tên sản phẩm'.obs;
 
   @override
   Future<void> onInit() async {
@@ -38,23 +38,23 @@ class ProductController extends GetxController {
   void sortProducts(String sortOption) {
     selectedSortOption.value = sortOption;
     switch (sortOption) {
-      case 'Name':
+      case 'Tên sản phẩm':
         products.sort(
             (a, b) => a.infoProduct!.name!.compareTo(b.infoProduct!.name!));
         break;
-      case 'Higher Price':
+      case 'Giá cao nhất':
         products.sort((a, b) =>
             b.infoProduct!.unitPrice!.compareTo(a.infoProduct!.unitPrice!));
         break;
-      case 'Lower Price':
+      case 'Giá thấp nhất':
         products.sort((a, b) =>
             a.infoProduct!.unitPrice!.compareTo(b.infoProduct!.unitPrice!));
         break;
-      case 'Newest':
+      case 'Mới nhất':
         products.sort((a, b) =>
             a.infoProduct!.stockInDate!.compareTo(b.infoProduct!.stockInDate!));
         break;
-      case 'Sale':
+      case 'Giảm giá':
         products.sort((a, b) =>
           a.infoProduct!.sale!.compareTo(b.infoProduct!.sale!));
         break;

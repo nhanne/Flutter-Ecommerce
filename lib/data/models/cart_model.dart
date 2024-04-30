@@ -68,13 +68,13 @@ class Cart with ChangeNotifier {
     } else {
       listCarts.add(item);
     }
-    TLoaders.customToast(message: 'Your Product has been added to Cart');
+    TLoaders.customToast(message: 'Sản phẩm của bạn đã được thêm vào giỏ hàng');
     notifyListeners();
   }
 
   removeFromCart(Cart item) {
     listCarts.remove(item);
-    TLoaders.customToast(message: 'Your Product has been removed from Cart');
+    TLoaders.customToast(message: 'Sản phẩm của bạn đã bị xóa khỏi Giỏ hàng');
     notifyListeners();
   }
 
@@ -100,8 +100,8 @@ class Cart with ChangeNotifier {
 
   void removeFromCartDialog(Cart item) {
     Get.defaultDialog(
-        title: 'Confirm Remove',
-        middleText: 'Are you sure want to remove this product from cart ?',
+        title: 'Xác nhận Xóa',
+        middleText: 'Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng không?',
         onConfirm: () {
           removeFromCart(item);
           Get.back();

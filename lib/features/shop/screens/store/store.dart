@@ -24,7 +24,7 @@ class StoreScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           title:
-              Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+              Text('Cửa hàng', style: Theme.of(context).textTheme.headlineMedium),
           actions: [
             Consumer<Cart>(builder: (context, cartModel, child) {
               return TCartCounterIcon(
@@ -55,7 +55,7 @@ class StoreScreen extends StatelessWidget {
                       children: const [
                         SizedBox(height: TSizes.spaceBtwItems),
                         TSearchContainer(
-                            text: 'Search in Store',
+                            text: 'Tìm kiếm trong cửa hàng',
                             showBorder: true,
                             showBackground: false,
                             padding: EdgeInsets.zero),

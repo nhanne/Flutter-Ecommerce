@@ -103,7 +103,7 @@ class TOrderListItems extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Shipping Date',
+                            Text('Ngày vận chuyển',
                                 style: Theme.of(context).textTheme.labelMedium),
                             Text(controller.getShipTime(controller.orders[index].orderTime),
                                 style: Theme.of(context).textTheme.titleMedium),

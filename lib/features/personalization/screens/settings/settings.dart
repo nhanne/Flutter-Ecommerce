@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   TAppBar(
-                      title: Text('Account',
+                      title: Text('Tài khoản',
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium!
@@ -43,13 +43,13 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const TSectionHeading(
-                      title: 'Account Settings', showActionButton: false),
+                      title: 'Cài đặt tài khoản', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
                   TSettingsMenuTile(
                     icon: Iconsax.safe_home,
-                    title: 'My Address',
-                    subTitle: 'Set shopping delivery address',
+                    title: 'Địa chỉ của tôi',
+                    subTitle: 'Đặt địa chỉ giao hàng mua sắm',
                     onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   // TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, Remove products and move to checkout', onTap: (){}),
@@ -59,8 +59,8 @@ class SettingsScreen extends StatelessWidget {
                   // TSettingsMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts', onTap: (){}),
                   TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
-                    title: 'My Orders', 
-                    subTitle: 'In progress and Completed Orders', 
+                    title: 'Đơn hàng của tôi',
+                    subTitle: 'Đơn hàng đang thực hiện và đã hoàn thành',
                     onTap: () => Get.to(() => const OrderScreen()),
                     ),
                   // const SizedBox(height: TSizes.spaceBtwSections),
@@ -101,7 +101,7 @@ class SettingsScreen extends StatelessWidget {
           width: double.infinity,
           child: OutlinedButton(
               onPressed: () => Get.to(() => const LoginScreen()),
-              child: const Text('Logout')),
+              child: const Text('Đăng xuất')),
         ),
       ),
     );

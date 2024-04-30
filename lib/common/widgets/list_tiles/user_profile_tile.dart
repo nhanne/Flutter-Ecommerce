@@ -24,7 +24,7 @@ class TUserProfileTitle extends StatelessWidget {
             ? const TShimmerEffect(width: 50, height: 50, radius: 80)
             : TCircularImage(image: image, width: 50, height: 50, isNetworkImage: networkImage.isNotEmpty, fit: BoxFit.fill,);
       }),
-      title: Text(controller.user.value.fullName, style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
+      title: Text(controller.user.value.fullName.toUpperCase(), style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
       subtitle: Text(controller.user.value.email, style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white)),
       trailing: IconButton(onPressed: onPressed, icon: const Icon(Iconsax.edit, color: TColors.white)),
     );

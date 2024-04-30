@@ -30,7 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
             item.infoProduct!.name!.toLowerCase().contains(query.toLowerCase()))
         .toList();
     return Scaffold(
-      appBar: const TAppBar(title: Text('Search Product'), showBackArrow: true),
+      appBar: const TAppBar(title: Text('Tìm kiếm sản phẩm'), showBackArrow: true),
       body: Stack(children: [
         SingleChildScrollView(
           child: Padding(
@@ -63,7 +63,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 });
               },
               decoration: const InputDecoration(
-                labelText: 'Search',
+                labelText: 'Tìm kiếm',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
               ),

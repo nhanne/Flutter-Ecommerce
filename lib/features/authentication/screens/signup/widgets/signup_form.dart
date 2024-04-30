@@ -5,7 +5,6 @@ import 'package:clothes/util/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import 'terms_conditions_checkbox.dart';
 
 class TSignupForm extends StatelessWidget {
@@ -25,7 +24,7 @@ class TSignupForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.firstName,
-                  validator: (value) => TValidator.validateEmptyText('First name', value),
+                  validator: (value) => TValidator.validateEmptyText(TTexts.firstName, value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.firstName,
@@ -36,7 +35,7 @@ class TSignupForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
-                  validator: (value) => TValidator.validateEmptyText('Last name', value),
+                  validator: (value) => TValidator.validateEmptyText(TTexts.lastName, value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.lastName,
@@ -49,7 +48,7 @@ class TSignupForm extends StatelessWidget {
 
           TextFormField(
             controller: controller.username,
-            validator: (value) => TValidator.validateEmptyText('Username', value),
+            validator: (value) => TValidator.validateEmptyText(TTexts.username, value),
             expands: false,
             decoration: const InputDecoration(labelText: TTexts.username, prefixIcon: Icon(Iconsax.user_edit)),
           ),

@@ -14,23 +14,21 @@ class TBillingAddressSection extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Obx(
         () {
-          final controller = AddressController.instance;
-          final selectAddress = controller.selectedAddress.value;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TSectionHeading(
-                  title: 'Shipping Address',
-                  buttonTitle: 'Change',
+                  title: 'Địa chỉ giao hàng',
+                  buttonTitle: 'Thay đổi',
                   onPressed: () => Get.to(() => const UserAddressScreen())),
-              Text(selectAddress.name,
+              Text(AddressController.instance.selectedAddress.value.name,
                   style: Theme.of(context).textTheme.bodyLarge),
               const SizedBox(height: TSizes.spaceBtwItems / 2),
               Row(
                 children: [
                   const Icon(Icons.phone, color: Colors.grey, size: 16),
                   const SizedBox(width: TSizes.spaceBtwItems),
-                  Text(selectAddress.phoneNumber,
+                  Text(AddressController.instance.selectedAddress.value.phoneNumber,
                       style: Theme.of(context).textTheme.bodyMedium),
                 ],
               ),
@@ -41,7 +39,7 @@ class TBillingAddressSection extends StatelessWidget {
                       color: Colors.grey, size: 16),
                   const SizedBox(width: TSizes.spaceBtwItems),
                   Expanded(
-                      child: Text(selectAddress.toString(),
+                      child: Text(AddressController.instance.selectedAddress.value.toString(),
                           style: Theme.of(context).textTheme.bodyMedium,
                           softWrap: true)),
                 ],

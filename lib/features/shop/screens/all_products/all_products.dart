@@ -1,5 +1,6 @@
 import 'package:clothes/common/widgets/appbar/appbar.dart';
 import 'package:clothes/util/constants/sizes.dart';
+import 'package:clothes/util/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'widgets/sortable_products.dart';
 
@@ -9,7 +10,7 @@ class AllProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar:  TAppBar(title: Text('Popular Products'), showBackArrow: true),
+      appBar:  TAppBar(title: Text(TTexts.popularProducts), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
