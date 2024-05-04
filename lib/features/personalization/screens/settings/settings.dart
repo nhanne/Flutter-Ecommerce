@@ -12,12 +12,23 @@ import 'package:clothes/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const videoURL = "https://youtu.be/zoss7NamS-U";
+    final YoutubePlayerController controller;
+    final videoID = YoutubePlayer.convertUrlToId(videoURL);
+    controller = YoutubePlayerController(
+      initialVideoId: videoID!,
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+      )
+    );
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -88,7 +99,23 @@ class SettingsScreen extends StatelessWidget {
                   //
                   // const SizedBox(height: TSizes.spaceBtwSections),
 
-                  const SizedBox(height: TSizes.spaceBtwSections * 2.5)
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  YoutubePlayer(
+                    controller: controller,
+                    showVideoProgressIndicator: true,
+                    onReady: () => debugPrint('Ready'),
+                    bottomActions: [
+                      CurrentPosition(),
+                      ProgressBar(
+                        isExpanded: true,
+                        colors: const ProgressBarColors(
+                          playedColor: Colors.amber,
+                          handleColor: Colors.amberAccent
+                        )
+                      ),
+                      const PlaybackSpeedButton()
+                    ],
+                  )
                 ],
               ),
             )
