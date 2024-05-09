@@ -18,7 +18,7 @@ class CartScreen extends StatelessWidget {
       return Scaffold(
           appBar: TAppBar(
               showBackArrow: true,
-              title: Text('Cart',
+              title: Text('Giỏ hàng',
                   style: Theme.of(context).textTheme.headlineSmall)),
           body: Padding(
             padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -31,7 +31,7 @@ class CartScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => Get.to(() => const CheckoutScreen()),
               child: Text(
-                  'Total: ${NumberFormat.decimalPattern().format(cartViewModel.totalPriceCart)} VNĐ'),
+                  'Tổng: ${NumberFormat.decimalPattern().format(cartViewModel.totalPriceCart)} VNĐ'),
             ),
           ));
     });

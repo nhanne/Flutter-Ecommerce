@@ -1,5 +1,4 @@
 import 'package:clothes/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:clothes/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:clothes/common/widgets/layouts/grid_layout.dart';
 import 'package:clothes/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:clothes/common/widgets/texts/section_heading.dart';
@@ -30,11 +29,6 @@ class HomeScreen extends StatelessWidget {
                   THomeAppBar(),
                   SizedBox(height: TSizes.spaceBtwSections),
 
-                  /// SearchBar
-                  TSearchContainer(
-                    text: 'Search In Store',
-                  ),
-                  SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -53,7 +47,7 @@ class HomeScreen extends StatelessWidget {
 
                   ///heading
                   TSectionHeading(
-                      title: 'Best Seller',
+                      title: 'Sản phẩm mới nhất',
                       showActionButton: true,
                       onPressed: () => Get.to(() => const AllProducts())),
                   const SizedBox(height: TSizes.spaceBtwItems),

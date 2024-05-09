@@ -35,7 +35,7 @@ class _TSortableProductState extends State<TSortableProduct> {
           onChanged: (value) {
             onSortClicked(value!);
           },
-          items: ['Higher Price', 'Lower Price', 'Sale', 'Name', 'Popularity']
+          items: ['Giá cao nhất', 'Giá thấp nhất', 'Giảm giá', 'Tên sản phẩm', 'Phổ biến']
               .map((option) =>
                   DropdownMenuItem(value: option, child: Text(option)))
               .toList(),

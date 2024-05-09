@@ -25,12 +25,12 @@ class StockController extends GetxController{
 
   fetchStockAPI(String idProduct) async{
     try {
-      TFullScreenLoader.openLoadingDialog('Loading data...', TImages.dockerAnimation);
+      TFullScreenLoader.openLoadingDialog('Đang tải dữ liệu...', TImages.dockerAnimation);
       stock.value = await APIStocks.fetchStockByProductId(idProduct);
       TFullScreenLoader.stopLoading();
       Get.to(() => ProductDetailScreen(stock: stock.value));
     } catch (e) {
-      TLoaders.errorSnackBar(title: 'Out of Stock', message: 'Please comeback later');
+      TLoaders.errorSnackBar(title: 'Hết hàng', message: 'Vui lòng quay lại sau');
       TFullScreenLoader.stopLoading();
     }
   }
@@ -38,15 +38,15 @@ class StockController extends GetxController{
   Cart? convertToCartItem(Stock stock){
     try{
       if(selectedSize.value == 0){
-        TLoaders.customToast(message: 'Please pick size');
+        TLoaders.customToast(message: 'Vui lòng chọn kích thước');
         return null;
       }
       if(selectedColor.value == 0){
-        TLoaders.customToast(message: 'Please pick color');
+        TLoaders.customToast(message: 'Vui lòng chọn màu');
         return null;
       }
       if(quantity.value == 0){
-        TLoaders.customToast(message: 'Please choose quantity');
+        TLoaders.customToast(message: 'Vui lòng chọn số lượng');
         return null;
       }
       return Cart(
@@ -62,7 +62,7 @@ class StockController extends GetxController{
           brand: stock.cateName
       );
     } catch (e){
-      TLoaders.errorSnackBar(title: 'Error');
+      TLoaders.errorSnackBar(title: 'Lỗi');
       return null;
     }
 

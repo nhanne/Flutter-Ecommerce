@@ -36,7 +36,7 @@ class TLoginForm extends StatelessWidget {
               () => TextFormField(
                 controller: controller.password,
                 validator: (value) =>
-                    TValidator.validateEmptyText('Password', value),
+                    TValidator.validateEmptyText(TTexts.password, value),
                 obscureText: controller.hidePassword.value,
                 decoration: InputDecoration(
                   labelText: TTexts.password,

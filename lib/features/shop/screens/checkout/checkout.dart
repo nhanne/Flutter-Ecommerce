@@ -24,7 +24,7 @@ class CheckoutScreen extends StatelessWidget {
       return Scaffold(
         appBar: TAppBar(
             showBackArrow: true,
-            title: Text('Order Review',
+            title: Text('Xem lại đơn hàng',
                 style: Theme.of(context).textTheme.headlineSmall)),
         body: SingleChildScrollView(
           child: Padding(
@@ -67,7 +67,7 @@ class CheckoutScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: ElevatedButton(
               onPressed: () => cartController.checkout(),
-              child:  Text('Checkout: ${cartViewModel.orderPrice} VNĐ')),
+              child:  Text('Thanh toán: ${cartViewModel.orderPrice} VNĐ')),
         ),
       );
     });

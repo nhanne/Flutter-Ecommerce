@@ -12,37 +12,48 @@ class TBillingAmountSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Consumer<Cart>(builder: (context, cartViewModel, child) {
-      return Column(
+        return Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Subtotal', style: Theme.of(context).textTheme.bodyMedium),
-                Text('${NumberFormat.decimalPattern().format(cartViewModel.totalPriceCart)} VNĐ', style: Theme.of(context).textTheme.labelLarge),
+                Text('Tổng', style: Theme.of(context).textTheme.bodyMedium),
+                Expanded(
+                    child: Text(
+                        '${NumberFormat.decimalPattern().format(cartViewModel.totalPriceCart)} VNĐ',
+                         style: Theme.of(context).textTheme.labelLarge,
+                         textAlign: TextAlign.right)),
               ],
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium),
-                Text('50.000 VNĐ', style: Theme.of(context).textTheme.labelLarge),
+                Text('Phí vận chuyển',
+                    style: Theme.of(context).textTheme.bodyMedium),
+                Expanded(
+                  child: Text('50.000 VNĐ',
+                      style: Theme.of(context).textTheme.labelLarge,
+                      textAlign: TextAlign.right),
+                ),
               ],
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Order Total', style: Theme.of(context).textTheme.bodyMedium),
-                Text('${cartViewModel.orderPrice} VNĐ', style: Theme.of(context).textTheme.titleMedium),
+                Text('Tổng tiền đơn hàng',
+                    style: Theme.of(context).textTheme.bodyMedium),
+                Expanded(
+                  child: Text('${cartViewModel.orderPrice} VNĐ',
+                      style: Theme.of(context).textTheme.titleMedium,
+                      textAlign: TextAlign.right),
+                ),
               ],
             )
           ],
         );
-      }
-      ),
+      }),
     );
   }
 }

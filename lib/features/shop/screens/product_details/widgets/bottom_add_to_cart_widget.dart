@@ -72,7 +72,7 @@ class TBottomAddToCart extends StatelessWidget {
                 backgroundColor: TColors.black,
                 side: const BorderSide(color: TColors.black),
               ),
-              child: const Text('Add to Cart'),
+              child: const Text('Thêm vào giỏ hàng'),
             );
           })
         ],

@@ -44,9 +44,9 @@ class TCartItem extends StatelessWidget {
                 Text.rich(
                     TextSpan(
                         children: [
-                          TextSpan(text: 'Color ', style: Theme.of(context).textTheme.bodySmall),
+                          TextSpan(text: 'Màu sắc ', style: Theme.of(context).textTheme.bodySmall),
                           TextSpan(text: cart.colorName, style: Theme.of(context).textTheme.bodyLarge),
-                          TextSpan(text: ' Size ', style: Theme.of(context).textTheme.bodySmall),
+                          TextSpan(text: ' Kích cỡ ', style: Theme.of(context).textTheme.bodySmall),
                           TextSpan(text: cart.sizeName, style: Theme.of(context).textTheme.bodyLarge),
                         ]
                     )

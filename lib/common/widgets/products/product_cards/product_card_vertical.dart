@@ -12,6 +12,7 @@ import 'package:clothes/util/constants/sizes.dart';
 import 'package:clothes/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key, required this.product});
@@ -38,7 +39,7 @@ class TProductCardVertical extends StatelessWidget {
             TRoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
-              backgroundColor: dark ? TColors.dark : TColors.light,
+              backgroundColor: dark ? TColors.dark : TColors.lightGrey,
               child: Stack(
                 children: [
                   /// Thumbnail Image
@@ -46,8 +47,9 @@ class TProductCardVertical extends StatelessWidget {
                       imageUrl: TImages.productImage +
                           product.infoProduct!.picture.toString(),
                       applyImageRadius: true,
-                      isNetworkImage: true),
-
+                      isNetworkImage: true,
+                      height: 180,
+                  ),
                   /// Sale Tag
                   Positioned(
                     top: 12,
@@ -90,16 +92,17 @@ class TProductCardVertical extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    TBrandTitleWithVerifiedIcon(title: product.cateName!),
                     TProductTitleText(
                       title: product.infoProduct!.name.toString(),
-                      smallSize: true,
+                      smallSize: false,
                     ),
-                    const SizedBox(height: TSizes.spaceBtwItems / 2),
-                    TBrandTitleWithVerifiedIcon(title: product.cateName!),
+
                   ],
                 ),
               ),
             ),
+
             const Spacer(),
 
             Row(
@@ -114,20 +117,32 @@ class TProductCardVertical extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(TSizes.cardRadiusMd),
-                      bottomRight: Radius.circular(TSizes.productImageRadius),
-                    ),
-                  ),
-                  child: const SizedBox(
-                    width: TSizes.iconMd * 1.2,
-                    height: TSizes.iconMd * 1.2,
-                    child:
-                        Center(child: Icon(Iconsax.add, color: TColors.white)),
-                  ),
+                Consumer<Product>(
+                  builder: (context, productViewModel,  child) {
+                    return GestureDetector(
+                      onTap: (){
+                        productViewModel.clickFavourite(product);
+                      },
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: TColors.light,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(TSizes.cardRadiusMd),
+                            bottomRight: Radius.circular(TSizes.productImageRadius),
+                          ),
+                        ),
+                        child: SizedBox(
+                          width: TSizes.iconMd * 1.2,
+                          height: TSizes.iconMd * 1.2,
+                          child: Center(
+                            child: productViewModel.listFavouriteProducts.contains(product)
+                                ? const Icon(Iconsax.heart5, color: TColors.error)
+                                : const Icon(Iconsax.heart, color: TColors.error)
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 )
               ],
             ),

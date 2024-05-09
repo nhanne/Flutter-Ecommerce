@@ -16,19 +16,27 @@ class TBillingPaymentSection extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
         children: [
-          TSectionHeading(title: 'Payment Method', buttonTitle: '', onPressed: (){}),
+          TSectionHeading(title: 'Phương thức thanh toán', buttonTitle: '', onPressed: (){}),
           const SizedBox(height: TSizes.spaceBtwItems / 2),
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               TRoundedContainer(
                 width: 60,
-                height: 35,
+                height: 65,
                 backgroundColor: dark ? TColors.light : TColors.white,
                 padding: const EdgeInsets.all(TSizes.sm),
                 child: const Image(image: AssetImage(TImages.cod), fit: BoxFit.contain),
               ),
               const SizedBox(width: TSizes.spaceBtwItems / 2),
-              Text('Cash on Delivery', style: Theme.of(context).textTheme.bodyLarge),
+              Expanded(
+                child: Text(
+                    'Thanh toán khi giao hàng',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: Theme.of(context).textTheme.bodyLarge
+                ),
+              ),
             ],
           )
         ],

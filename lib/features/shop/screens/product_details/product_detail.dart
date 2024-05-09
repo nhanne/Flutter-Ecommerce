@@ -27,15 +27,13 @@ class ProductDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text('Product Detail',
+        title: Text('Chi tiết sản phẩm',
             style: Theme.of(context).textTheme.headlineSmall),
         actions: [
-          Consumer<Cart>(builder: (context, cartModel, child) {
-            return TCartCounterIcon(
-              onPressed: () => Get.to(const CartScreen()),
-              iconColor: TColors.black,
-            );
-          })
+          TCartCounterIcon(
+            onPressed: () => Get.to(const CartScreen()),
+            iconColor: TColors.black,
+          )
         ],
       ),
       bottomNavigationBar: TBottomAddToCart(stock: stock),
@@ -72,7 +70,7 @@ class ProductDetailScreen extends StatelessWidget {
                               cart.addToCart(cartModel);
                               Get.to(() => const CartScreen());
                             }
-                          }, child: const Text('Checkout'))),
+                          }, child: const Text('Mua ngay'))),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   /// Reviews
